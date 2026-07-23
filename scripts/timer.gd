@@ -2,18 +2,17 @@ extends Node
 
 @export var minutes: RichTextLabel
 @export var seconds: RichTextLabel
+@export var time : float = 30
 
 signal time_low
 signal time_elapsed
 
 static var low_threshold = 10
-var time : float
-var low_emitted : bool
+var low_emitted : bool = false
 
 
 func _ready():
-	time = 30
-	low_emitted = false
+	return
 	
 func _process(delta):
 	if time > 0:
