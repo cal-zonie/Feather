@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bx2mh5yx4j3ws"]
+
+[ext_resource type="Script" uid="uid://d1rhsqge26pug" path="res://scripts/timer.gd" id="1_wes8m"]
+[ext_resource type="FontFile" uid="uid://bdbh845suu1e1" path="res://assets/fonts/DigitTech7-Regular.ttf" id="1_x4bgg"]
+
+[node name="Timer" type="Node2D" unique_id=1032316048 node_paths=PackedStringArray("minutes", "seconds")]
+script = ExtResource("1_wes8m")
+minutes = NodePath("Minutes")
+seconds = NodePath("Seconds")
+
+[node name="Border" type="ColorRect" parent="." unique_id=2064652960]
+offset_right = 112.0
+offset_bottom = 51.0
+color = Color(0.25565878, 0.25565878, 0.25565878, 1)
+
+[node name="Inner" type="ColorRect" parent="." unique_id=1809326722]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 107.0
+offset_bottom = 46.0
+color = Color(0, 0, 0, 1)
+
+[node name="Colon" type="RichTextLabel" parent="." unique_id=909373252]
+offset_left = 52.0
+offset_top = 1.0
+offset_right = 60.0
+offset_bottom = 43.0
+theme_override_colors/default_color = Color(0.96862745, 0, 0.05882353, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = ":"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="Minutes" type="RichTextLabel" parent="." unique_id=295689884]
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 52.0
+offset_bottom = 45.0
+theme_override_colors/default_color = Color(0.96862745, 0, 0.05882353, 1)
+theme_override_fonts/normal_font = ExtResource("1_x4bgg")
+theme_override_font_sizes/normal_font_size = 35
+text = "00"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Seconds" type="RichTextLabel" parent="." unique_id=1067711956]
+offset_left = 60.0
+offset_top = 6.0
+offset_right = 106.0
+offset_bottom = 45.0
+theme_override_colors/default_color = Color(0.96862745, 0, 0.05882353, 1)
+theme_override_fonts/normal_font = ExtResource("1_x4bgg")
+theme_override_font_sizes/normal_font_size = 35
+text = "00"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
