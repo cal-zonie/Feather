@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c6ttk442pn7m4"]
+
+[ext_resource type="Texture2D" uid="uid://c3swprbb4y06c" path="res://assets/feather background.png" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="2_rvslj"]
+
+[node name="Main" type="Node2D" unique_id=981665366]
+
+[node name="FeatherBackground" type="Sprite2D" parent="." unique_id=1143402216]
+texture = ExtResource("1_elqb8")
+centered = false
+
+[node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("2_rvslj")]
+position = Vector2(553, 393)

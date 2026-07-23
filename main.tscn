@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://c6ttk442pn7m4"]
-
-[ext_resource type="Texture2D" uid="uid://c3swprbb4y06c" path="res://assets/feather background.png" id="1_ig7tw"]
-
-[node name="Node2D" type="Node2D" unique_id=981665366]
-
-[node name="FeatherBackground" type="Sprite2D" parent="." unique_id=1143402216]
-texture = ExtResource("1_ig7tw")
-centered = false
