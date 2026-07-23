@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://5pfvas81oonw"]
+
+[ext_resource type="Texture2D" uid="uid://ceevhac4aiwdw" path="res://assets/feather.png" id="1_bxhhl"]
+[ext_resource type="Script" uid="uid://cnypwpbg07rk3" path="res://scripts/feather.gd" id="1_xvemx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a6asw"]
+radius = 18.830843
+height = 68.11627
+
+[node name="Feather" type="Area2D" unique_id=1488115311]
+script = ExtResource("1_xvemx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2072141648]
+position = Vector2(1, 1)
+rotation = 0.62133723
+shape = SubResource("CapsuleShape2D_a6asw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=495175892]
+texture = ExtResource("1_bxhhl")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
