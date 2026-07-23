@@ -1,8 +1,11 @@
+class_name Feather
 extends Area2D
 
 var dragging := false
 var mouse_offset := Vector2.ZERO
 var mouse_inside := false
+
+signal on_pickup(feather)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,5 +27,13 @@ func _on_input_event(viewport, event, shape_idx):
 		if event.pressed and mouse_inside:
 			mouse_offset = position - get_global_mouse_position()
 			dragging = true
-		else:
-			dragging = false
+			#Highlight the feather
+			$Regular.visible = false
+			$Highlight.visible = true
+			on_pickup.emit(self)
+
+func release():
+	#Unhighlight the feather
+	$Regular.visible = true
+	$Highlight.visible = false
+	dragging = false
