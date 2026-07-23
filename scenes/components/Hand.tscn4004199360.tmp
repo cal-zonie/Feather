@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bswh7bdng72eb" path="res://assets/hand.png" id="2_vy5fr"]
 
 [node name="Hand" type="Node2D" unique_id=2005192961]
-z_index = 4096
 script = ExtResource("1_ijqby")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1279356268]
