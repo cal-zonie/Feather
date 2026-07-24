@@ -8,10 +8,11 @@ var mouse_inside := false
 @export var base_floor_y: float = 550
 @export var floor_y: float
 @export var fall_speed: float = 1
-@export var rotation_speed: float = 0.006
-@export var float_speed: float = 0.6
-@export var rotation_limit: float = .5
+@export var rotation_speed: float = 0.01
+@export var float_speed: float = 0.5
+@export var rotation_limit: float = 0.5
 @export var min_fall_height: float
+@export var smooth_constant: float = .25 #must be greater than 0
 
 signal on_pickup(feather)
 
@@ -26,9 +27,11 @@ func _process(delta):
 	else:
 		#Feather rotates and moves left/right as it falls
 		if global_position.y <= floor_y:
-			position += Vector2.DOWN * fall_speed
-			rotate(rotation_speed)
-			position.x -= float_speed
+			#Slows feather movement down as it reaches rotation limit (to a minimum of a smooth_constant mult)
+			var fall_modifier = (abs(rotation_limit) + smooth_constant) - abs(rotation)
+			position += Vector2.DOWN * (fall_modifier * fall_speed)
+			rotate(fall_modifier * rotation_speed)
+			position.x -= fall_modifier * float_speed
 			if abs(rotation) > abs(rotation_limit):
 				rotation_speed *= -1
 				rotation_limit *= -1
