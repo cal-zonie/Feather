@@ -2,6 +2,7 @@ extends Node
 
 var feathers: Array[Feather]
 var max_z = 0
+var held_feather: Feather
 
 @export var BASE_FEATHER: PackedScene
 
@@ -9,15 +10,14 @@ var max_z = 0
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("debug"):
 		add_feather()
 	
-	if Input.is_action_just_released("left_click"):
-		for feather in feathers:
-			feather.release()
+	if Input.is_action_just_released("left_click") and held_feather:
+		held_feather.release()
+		held_feather = null
 
 func add_feather():
 	var newFeather: Feather = BASE_FEATHER.duplicate(true).instantiate()
@@ -25,8 +25,6 @@ func add_feather():
 	add_child(newFeather)
 	feathers.append(newFeather)
 
-func pickup_feather(feather):
-	for f in feathers:
-		feather.z_index = max_z
-		max_z += 1
-	pass
+func pickup_feather(feather: Feather):
+	held_feather = feather
+	move_child(feather, -1)

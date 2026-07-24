@@ -10,17 +10,21 @@ height = 60.447216
 
 [node name="Feather" type="Area2D" unique_id=1488115311]
 script = ExtResource("1_xvemx")
+fall_speed = 0.715
+min_fall_height = 434.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2072141648]
 position = Vector2(3, 1)
-rotation = 0.62133723
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_a6asw")
 
 [node name="Regular" type="Sprite2D" parent="." unique_id=495175892]
+rotation = 0.9302605
 texture = ExtResource("1_bxhhl")
 
 [node name="Highlight" type="Sprite2D" parent="." unique_id=372824254]
 visible = false
+rotation = 0.9302605
 texture = ExtResource("3_t4dkr")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
