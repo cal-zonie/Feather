@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://cayyv7jg05tqr"]
+
+[ext_resource type="Script" uid="uid://bxqwh8jg08ars" path="res://scripts/main_menu.gd" id="1_bqojv"]
+[ext_resource type="Texture2D" uid="uid://ceevhac4aiwdw" path="res://assets/feather.png" id="1_wlpbi"]
+
+[node name="MainMenu" type="Control" unique_id=2081880945]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bqojv")
+
+[node name="BackgroundColor" type="ColorRect" parent="." unique_id=768649293]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.44902766, 0.60677665, 0.53538287, 1)
+
+[node name="Elements" type="MarginContainer" parent="." unique_id=165917243]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+
+[node name="Split" type="HBoxContainer" parent="Elements" unique_id=665127051]
+layout_mode = 2
+
+[node name="Menu" type="VBoxContainer" parent="Elements/Split" unique_id=668658872]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="Elements/Split/Menu" unique_id=1688350265]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99999946, 0.09179252, 0.23760307, 1)
+theme_override_colors/font_outline_color = Color(0.43393263, 0.0078069703, 9.62615e-08, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 100
+text = "Feather"
+
+[node name="MainButtons" type="VBoxContainer" parent="Elements/Split/Menu" unique_id=1876750515]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Elements/Split/Menu/MainButtons" unique_id=106091920]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
+theme_override_colors/font_outline_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Play"
+flat = true
+
+[node name="Options" type="Button" parent="Elements/Split/Menu/MainButtons" unique_id=1851596906]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.6627451, 0.6627451, 1)
+theme_override_colors/font_outline_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Options
+"
+flat = true
+
+[node name="Quit" type="Button" parent="Elements/Split/Menu/MainButtons" unique_id=714355236]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.6627451, 0.6627451, 1)
+theme_override_colors/font_outline_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Quit
+"
+flat = true
+
+[node name="OptionsButtons" type="VBoxContainer" parent="Elements/Split/Menu" unique_id=1757402838]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="SFXVolume" type="VBoxContainer" parent="Elements/Split/Menu/OptionsButtons" unique_id=1433334318]
+layout_mode = 2
+
+[node name="SFXLabel" type="Label" parent="Elements/Split/Menu/OptionsButtons/SFXVolume" unique_id=1556296522]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "SFX Volume"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="Elements/Split/Menu/OptionsButtons/SFXVolume" unique_id=465096506]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+scrollable = false
+tick_count = 4
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="MusicVolume" type="VBoxContainer" parent="Elements/Split/Menu/OptionsButtons" unique_id=101264285]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="Elements/Split/Menu/OptionsButtons/MusicVolume" unique_id=763333423]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="Elements/Split/Menu/OptionsButtons/MusicVolume" unique_id=1992554361]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+scrollable = false
+tick_count = 4
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="Return" type="Button" parent="Elements/Split/Menu/OptionsButtons" unique_id=746633242]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
+theme_override_colors/font_outline_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Return"
+flat = true
+
+[node name="Feather" type="TextureRect" parent="Elements/Split" unique_id=1052614420]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_wlpbi")
+
+[connection signal="pressed" from="Elements/Split/Menu/MainButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Elements/Split/Menu/MainButtons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Elements/Split/Menu/MainButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="Elements/Split/Menu/OptionsButtons/SFXVolume/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="Elements/Split/Menu/OptionsButtons/SFXVolume/SFXSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="Elements/Split/Menu/OptionsButtons/MusicVolume/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="Elements/Split/Menu/OptionsButtons/Return" to="." method="_on_return_pressed"]
