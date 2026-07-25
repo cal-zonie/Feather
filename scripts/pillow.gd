@@ -2,7 +2,6 @@ extends Area2D
 
 var mouse_inside: bool
 @export var feather_count: int
-@export var feather_manager: FeatherManager
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,5 +30,5 @@ func _on_input_event(viewport, event, shape_idx):
 
 func spawn_feathers():
 	for i in range(0, feather_count):
-		feather_manager.add_feather()
+		FeatherManager.add_feather()
 		pass

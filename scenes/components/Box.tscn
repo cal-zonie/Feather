@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://wb3yf1ckvov8"]
 
 [ext_resource type="Texture2D" uid="uid://dwu4rgp656255" path="res://assets/box2.png" id="1_m8p8s"]
+[ext_resource type="Script" uid="uid://nbl45pay638e" path="res://scripts/box.gd" id="1_ovm6q"]
 [ext_resource type="Texture2D" uid="uid://dm8db0lh1bmnr" path="res://assets/box1.png" id="2_315le"]
 [ext_resource type="Texture2D" uid="uid://pd4icr7pfn6t" path="res://assets/box3.png" id="3_ho50r"]
 [ext_resource type="Texture2D" uid="uid://8f1l3aiva1ey" path="res://assets/box4.png" id="4_tls8h"]
 
-[node name="Box" type="Node2D" unique_id=494118545]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7y7k"]
+size = Vector2(77, 21)
+
+[node name="Box" type="Area2D" unique_id=261152349]
+script = ExtResource("1_ovm6q")
 
 [node name="box1" type="Sprite2D" parent="." unique_id=953307794]
 visible = false
@@ -21,3 +26,10 @@ texture = ExtResource("3_ho50r")
 [node name="box4" type="Sprite2D" parent="." unique_id=1234887100]
 visible = false
 texture = ExtResource("4_tls8h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1044653004]
+position = Vector2(1.5, 54.5)
+shape = SubResource("RectangleShape2D_q7y7k")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
