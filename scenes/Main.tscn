@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c3swprbb4y06c" path="res://assets/feather background.png" id="1_elqb8"]
 [ext_resource type="PackedScene" uid="uid://cvxf5ki1fbr5o" path="res://scenes/components/Pillow.tscn" id="2_rarhs"]
 [ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="2_rvslj"]
-[ext_resource type="PackedScene" uid="uid://drwa0ds6l0imt" path="res://scenes/FeatherManager.tscn" id="4_rarhs"]
+[ext_resource type="PackedScene" uid="uid://wb3yf1ckvov8" path="res://scenes/components/Box.tscn" id="2_vcsgt"]
 
 [node name="Main" type="Node2D" unique_id=981665366]
 
@@ -11,12 +11,24 @@
 texture = ExtResource("1_elqb8")
 centered = false
 
+[node name="Box" parent="." unique_id=494118545 instance=ExtResource("2_vcsgt")]
+position = Vector2(941, 508)
+
 [node name="Pillow" parent="." unique_id=1652305971 instance=ExtResource("2_rarhs")]
 position = Vector2(120, 339)
 
-[node name="FeatherManager" parent="." unique_id=615271918 instance=ExtResource("4_rarhs")]
+[node name="Box2" parent="." unique_id=2132267315 instance=ExtResource("2_vcsgt")]
+modulate = Color(1, 1, 1, 0.7019608)
+z_index = 1
+position = Vector2(942, 507)
+
+[node name="box2" parent="Box2" index="1" unique_id=1185639623]
 visible = false
-position = Vector2(99, 511)
+
+[node name="box4" parent="Box2" index="3" unique_id=1234887100]
+visible = true
 
 [node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("2_rvslj")]
 position = Vector2(553, 393)
+
+[editable path="Box2"]
