@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c6ttk442pn7m4"]
 
 [ext_resource type="Texture2D" uid="uid://c3swprbb4y06c" path="res://assets/feather background.png" id="1_elqb8"]
-[ext_resource type="PackedScene" uid="uid://cvxf5ki1fbr5o" path="res://scenes/components/Pillow.tscn" id="2_rarhs"]
 [ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="2_rvslj"]
 [ext_resource type="PackedScene" uid="uid://wb3yf1ckvov8" path="res://scenes/components/Box.tscn" id="2_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://b3l4ce6omieam" path="res://scenes/components/Chute.tscn" id="4_rarhs"]
 
 [node name="Main" type="Node2D" unique_id=981665366]
 
@@ -13,9 +13,6 @@ centered = false
 
 [node name="Box" parent="." unique_id=494118545 instance=ExtResource("2_vcsgt")]
 position = Vector2(941, 508)
-
-[node name="Pillow" parent="." unique_id=1652305971 instance=ExtResource("2_rarhs")]
-position = Vector2(120, 339)
 
 [node name="Box2" parent="." unique_id=2132267315 instance=ExtResource("2_vcsgt")]
 modulate = Color(1, 1, 1, 0.7019608)
@@ -30,5 +27,8 @@ visible = true
 
 [node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("2_rvslj")]
 position = Vector2(553, 393)
+
+[node name="Chute" parent="." unique_id=1154756705 instance=ExtResource("4_rarhs")]
+position = Vector2(502, -1)
 
 [editable path="Box2"]
