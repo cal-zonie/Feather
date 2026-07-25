@@ -19,6 +19,13 @@ signal on_pickup(feather)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	floor_y += base_floor_y + randf_range(-30, 30)
+	#Randomize the starting rotation/position of the feather
+	position += Vector2(randf_range(-40, 40), randf_range(-10, 10))
+	rotation = randf_range(-rotation_limit, rotation_limit)
+	if randf() > 0.5:
+		rotation_speed *= -1
+		rotation_limit *= -1
+		float_speed *= -1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -38,9 +45,15 @@ func _process(delta):
 				float_speed *= -1
 
 func _on_mouse_entered():
+	#Highlight the feather
+	$Regular.visible = false
+	$Highlight.visible = true
 	mouse_inside = true;
 
 func _on_mouse_exited():
+	#Unhighlight the feather
+	$Regular.visible = true
+	$Highlight.visible = false
 	mouse_inside = false
 
 func _on_input_event(viewport, event, shape_idx):
@@ -48,16 +61,10 @@ func _on_input_event(viewport, event, shape_idx):
 		if event.pressed and mouse_inside:
 			mouse_offset = position - get_global_mouse_position()
 			dragging = true
-			#Highlight the feather
-			$Regular.visible = false
-			$Highlight.visible = true
 			on_pickup.emit(self)
 
 func release():
 	if dragging:
-		#Unhighlight the feather
-		$Regular.visible = true
-		$Highlight.visible = false
 		dragging = false
 		if global_position.y <= min_fall_height:
 			floor_y = base_floor_y + randf_range(-30, 30)

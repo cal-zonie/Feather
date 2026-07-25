@@ -1,3 +1,4 @@
+class_name FeatherManager
 extends Node
 
 var feathers: Array[Feather]
