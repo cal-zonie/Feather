@@ -10,7 +10,6 @@ signal time_elapsed
 static var low_threshold = 10
 var low_emitted : bool = false
 
-
 func _ready():
 	return
 	

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Feather"
-run/main_scene="uid://c6ttk442pn7m4"
+run/main_scene="uid://cayyv7jg05tqr"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://bsnxoabjpefwh"
 
 [display]
 
