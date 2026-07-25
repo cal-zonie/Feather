@@ -18,6 +18,14 @@ signal on_pickup(feather)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	floor_y += base_floor_y + randf_range(-30, 30)
+	#Randomize the starting rotation/position of the feather
+	#position.x += randf_range(-float_speed * 50, float_speed * 50)
+	position += Vector2(randf_range(-10, 10), randf_range(-10, 10))
+	rotation = randf_range(-rotation_limit, rotation_limit)
+	if randf() > 0.5:
+		rotation_speed *= -1
+		rotation_limit *= -1
+		float_speed *= -1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

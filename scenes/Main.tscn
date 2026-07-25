@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6ttk442pn7m4"]
 
 [ext_resource type="Texture2D" uid="uid://c3swprbb4y06c" path="res://assets/feather background.png" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://cvxf5ki1fbr5o" path="res://scenes/components/Pillow.tscn" id="2_rarhs"]
 [ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="2_rvslj"]
 [ext_resource type="PackedScene" uid="uid://drwa0ds6l0imt" path="res://scenes/FeatherManager.tscn" id="4_rarhs"]
 
@@ -10,7 +11,11 @@
 texture = ExtResource("1_elqb8")
 centered = false
 
+[node name="Pillow" parent="." unique_id=1652305971 instance=ExtResource("2_rarhs")]
+position = Vector2(120, 370)
+
 [node name="FeatherManager" parent="." unique_id=615271918 instance=ExtResource("4_rarhs")]
+visible = false
 position = Vector2(99, 511)
 
 [node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("2_rvslj")]
