@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxqwh8jg08ars" path="res://scripts/main_menu.gd" id="1_bqojv"]
 [ext_resource type="Texture2D" uid="uid://ceevhac4aiwdw" path="res://assets/feather.png" id="1_wlpbi"]
+[ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="3_ldf1p"]
 
 [node name="MainMenu" type="Control" unique_id=2081880945]
 layout_mode = 3
@@ -136,10 +137,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("1_wlpbi")
 
+[node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("3_ldf1p")]
+
 [connection signal="pressed" from="Elements/Split/Menu/MainButtons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Elements/Split/Menu/MainButtons/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Elements/Split/Menu/MainButtons/Quit" to="." method="_on_quit_pressed"]
-[connection signal="value_changed" from="Elements/Split/Menu/OptionsButtons/SFXVolume/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="Elements/Split/Menu/OptionsButtons/SFXVolume/SFXSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="value_changed" from="Elements/Split/Menu/OptionsButtons/SFXVolume/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="Elements/Split/Menu/OptionsButtons/MusicVolume/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="Elements/Split/Menu/OptionsButtons/Return" to="." method="_on_return_pressed"]
