@@ -11,6 +11,7 @@ size = Vector2(77, 9)
 
 [node name="Box" type="Area2D" unique_id=261152349]
 script = ExtResource("1_ovm6q")
+speed = 10.0
 
 [node name="box1" type="Sprite2D" parent="." unique_id=953307794]
 visible = false
@@ -24,7 +25,8 @@ visible = false
 texture = ExtResource("3_ho50r")
 
 [node name="box4" type="Sprite2D" parent="." unique_id=1234887100]
-visible = false
+self_modulate = Color(1, 1, 1, 0.4862745)
+z_index = 2
 texture = ExtResource("4_tls8h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1044653004]

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c6ttk442pn7m4"]
 
 [ext_resource type="Texture2D" uid="uid://c3swprbb4y06c" path="res://assets/feather background.png" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://bkm6qtfg7eril" path="res://scenes/components/Conveyer.tscn" id="2_c01mt"]
 [ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="2_rvslj"]
 [ext_resource type="PackedScene" uid="uid://wb3yf1ckvov8" path="res://scenes/components/Box.tscn" id="2_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://b3l4ce6omieam" path="res://scenes/components/Chute.tscn" id="4_rarhs"]
-[ext_resource type="Texture2D" uid="uid://8f1l3aiva1ey" path="res://assets/box4.png" id="4_vcsgt"]
 
 [node name="Main" type="Node2D" unique_id=981665366]
 
@@ -12,18 +12,34 @@
 texture = ExtResource("1_elqb8")
 centered = false
 
-[node name="Box" parent="." unique_id=494118545 instance=ExtResource("2_vcsgt")]
+[node name="Conveyers" type="Node2D" parent="." unique_id=631673649]
+position = Vector2(-88, 76)
+rotation = 0.008196726
+
+[node name="Conveyer" parent="Conveyers" unique_id=100981104 instance=ExtResource("2_c01mt")]
+position = Vector2(138, 520)
+scale = Vector2(0.31, 0.31)
+
+[node name="Conveyer2" parent="Conveyers" unique_id=214733216 instance=ExtResource("2_c01mt")]
+position = Vector2(488.00006, 517)
+scale = Vector2(0.31, 0.31)
+
+[node name="Conveyer3" parent="Conveyers" unique_id=1968226685 instance=ExtResource("2_c01mt")]
+position = Vector2(840.00006, 514)
+scale = Vector2(0.31, 0.31)
+
+[node name="Conveyer4" parent="Conveyers" unique_id=1806674434 instance=ExtResource("2_c01mt")]
+position = Vector2(1193, 510.00006)
+scale = Vector2(0.31, 0.31)
+
+[node name="Boxes" type="Node2D" parent="." unique_id=412302564]
+
+[node name="Box" parent="Boxes" unique_id=494118545 instance=ExtResource("2_vcsgt")]
 position = Vector2(941, 508)
 
 [node name="Chute" parent="." unique_id=1154756705 instance=ExtResource("4_rarhs")]
 position = Vector2(502, -1)
 feather_rate = 0.1
-
-[node name="box4" type="Sprite2D" parent="." unique_id=722640735]
-modulate = Color(1, 1, 1, 0.5803922)
-z_index = 1
-position = Vector2(942, 509)
-texture = ExtResource("4_vcsgt")
 
 [node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("2_rvslj")]
 position = Vector2(553, 393)

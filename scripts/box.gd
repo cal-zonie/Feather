@@ -1,5 +1,7 @@
-extends Node
+class_name Box
+extends Node2D
 
+@export var speed: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -8,8 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
+	position.x += speed * delta
 
 func _on_area_entered(area):
 	area.on_box = true
