@@ -35,23 +35,13 @@ position = Vector2(553, 393)
 position = Vector2(502, -1)
 feather_rate = 0.1
 
-[node name="BCount" type="Label" parent="." unique_id=2070505110]
-offset_left = 963.0
-offset_top = 44.0
-offset_right = 1003.0
-offset_bottom = 101.0
-theme_override_colors/font_color = Color(0.92941177, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_dke22")
-theme_override_font_sizes/font_size = 50
-text = "0"
-
 [node name="Lives" type="Control" parent="." unique_id=703142261]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 798.0
-offset_top = 54.0
-offset_right = 838.0
-offset_bottom = 94.0
+offset_left = 925.0
+offset_top = 52.0
+offset_right = 965.0
+offset_bottom = 92.0
 
 [node name="Border" type="ColorRect" parent="Lives" unique_id=1590836302]
 layout_mode = 0
@@ -125,5 +115,69 @@ theme_override_colors/font_color = Color(0.18039216, 0.17254902, 0.17254902, 1)
 theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 40
 text = "X"
+
+[node name="Quota" type="Control" parent="." unique_id=2056910276]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1030.0
+offset_top = 52.0
+offset_right = 1070.0
+offset_bottom = 92.0
+
+[node name="Border" type="ColorRect" parent="Quota" unique_id=453856072]
+layout_mode = 0
+offset_right = 61.0
+offset_bottom = 41.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="ColorRect" parent="Quota" unique_id=2115177318]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 58.0
+offset_bottom = 38.0
+color = Color(0.3779188, 0.3779189, 0.37791875, 1)
+
+[node name="Numbers" type="MarginContainer" parent="Quota" unique_id=975613193]
+layout_mode = 0
+offset_top = -11.0
+offset_right = 60.0
+offset_bottom = 54.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="H" type="HBoxContainer" parent="Quota/Numbers" unique_id=641093318]
+layout_mode = 2
+alignment = 1
+
+[node name="Tens_Back" type="Label" parent="Quota/Numbers/H" unique_id=338465421]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5019608, 0, 0, 0.24705882)
+theme_override_fonts/font = ExtResource("6_dke22")
+theme_override_font_sizes/font_size = 35
+text = "8"
+
+[node name="Tens" type="Label" parent="Quota/Numbers/H/Tens_Back" unique_id=2145383772]
+layout_mode = 0
+theme_override_colors/font_color = Color(0.92941177, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_dke22")
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="Ones_Back" type="Label" parent="Quota/Numbers/H" unique_id=225946632]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5019608, 0, 0, 0.24705882)
+theme_override_fonts/font = ExtResource("6_dke22")
+theme_override_font_sizes/font_size = 35
+text = "8"
+
+[node name="Ones" type="Label" parent="Quota/Numbers/H/Ones_Back" unique_id=2006257513]
+layout_mode = 0
+theme_override_colors/font_color = Color(0.92941177, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_dke22")
+theme_override_font_sizes/font_size = 35
+text = "5"
 
 [editable path="Box2"]
