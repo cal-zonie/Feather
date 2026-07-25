@@ -11,7 +11,7 @@ func _ready():
 	quota = Manager.quota[Manager.current_level - 1]
 	conveyor_speed = Manager.conveyor_speed[Manager.current_level - 1]
 	$BCount.text = str(quota)
-	$LCount.text = str(lives_remaining)
+	update_lives()
 	request_ready()
 	
 func _process(_delta):
@@ -38,7 +38,16 @@ func submit_box(feathers: int, required: int):
 			pass
 		
 		lives_remaining -= 1
-		$LCount.text = str(lives_remaining)
+		update_lives()
 		if lives_remaining == 0:
 			#play lose sound
 			Manager.end_level(lives_remaining)
+
+func update_lives():
+	for i in range(3):
+		get_node("Lives/Xs/H/" + str(i + 1) + "_off").visible = true
+	var strikes = 3 - lives_remaining
+	for i in range(strikes):
+		get_node("Lives/Xs/H/" + str(i + 1) + "_on").visible = true
+		get_node("Lives/Xs/H/" + str(i + 1) + "_off").visible = false
+		

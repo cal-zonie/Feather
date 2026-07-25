@@ -45,14 +45,85 @@ theme_override_fonts/font = ExtResource("6_dke22")
 theme_override_font_sizes/font_size = 50
 text = "0"
 
-[node name="LCount" type="Label" parent="." unique_id=1118003371]
-offset_left = 1062.0
-offset_top = 44.0
-offset_right = 1102.0
-offset_bottom = 101.0
+[node name="Lives" type="Control" parent="." unique_id=703142261]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 798.0
+offset_top = 54.0
+offset_right = 838.0
+offset_bottom = 94.0
+
+[node name="Border" type="ColorRect" parent="Lives" unique_id=1590836302]
+layout_mode = 0
+offset_right = 95.0
+offset_bottom = 41.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="ColorRect" parent="Lives" unique_id=14421686]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 92.0
+offset_bottom = 38.0
+color = Color(0.3328807, 0.33288068, 0.33288068, 1)
+
+[node name="Xs" type="MarginContainer" parent="Lives" unique_id=527021907]
+layout_mode = 0
+offset_top = -13.0
+offset_right = 95.0
+offset_bottom = 52.0
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="H" type="HBoxContainer" parent="Lives/Xs" unique_id=472209677]
+layout_mode = 2
+alignment = 1
+
+[node name="1_on" type="Label" parent="Lives/Xs/H" unique_id=1667737489]
+visible = false
+layout_mode = 2
 theme_override_colors/font_color = Color(0.92941177, 0, 0, 1)
-theme_override_fonts/font = ExtResource("6_dke22")
-theme_override_font_sizes/font_size = 50
-text = "3"
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="2_on" type="Label" parent="Lives/Xs/H" unique_id=1015218971]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92941177, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="3_on" type="Label" parent="Lives/Xs/H" unique_id=1846085539]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92941177, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="1_off" type="Label" parent="Lives/Xs/H" unique_id=1021811222]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.17853403, 0.17085642, 0.17073458, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="2_off" type="Label" parent="Lives/Xs/H" unique_id=1354274215]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18039216, 0.17254902, 0.17254902, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="3_off" type="Label" parent="Lives/Xs/H" unique_id=698946769]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18039216, 0.17254902, 0.17254902, 1)
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
 
 [editable path="Box2"]
