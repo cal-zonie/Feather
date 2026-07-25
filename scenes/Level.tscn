@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c6ttk442pn7m4"]
+
+[ext_resource type="Texture2D" uid="uid://c3swprbb4y06c" path="res://assets/feather background.png" id="1_kl8ac"]
+[ext_resource type="Script" uid="uid://bkamr2kemnv5n" path="res://scripts/level.gd" id="1_qifjx"]
+[ext_resource type="PackedScene" uid="uid://wb3yf1ckvov8" path="res://scenes/components/Box.tscn" id="2_qifjx"]
+[ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="3_dke22"]
+[ext_resource type="PackedScene" uid="uid://b3l4ce6omieam" path="res://scenes/components/Chute.tscn" id="4_4qegb"]
+[ext_resource type="FontFile" uid="uid://bdbh845suu1e1" path="res://assets/fonts/DigitTech7-Regular.ttf" id="6_dke22"]
+
+[node name="Level" type="Node2D" unique_id=981665366]
+script = ExtResource("1_qifjx")
+
+[node name="FeatherBackground" type="Sprite2D" parent="." unique_id=1143402216]
+texture = ExtResource("1_kl8ac")
+centered = false
+
+[node name="Box" parent="." unique_id=494118545 instance=ExtResource("2_qifjx")]
+position = Vector2(941, 508)
+
+[node name="Box2" parent="." unique_id=2132267315 instance=ExtResource("2_qifjx")]
+modulate = Color(1, 1, 1, 0.7019608)
+z_index = 1
+position = Vector2(942, 507)
+
+[node name="box2" parent="Box2" index="1" unique_id=1185639623]
+visible = false
+
+[node name="box4" parent="Box2" index="3" unique_id=1234887100]
+visible = true
+
+[node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("3_dke22")]
+position = Vector2(553, 393)
+
+[node name="Chute" parent="." unique_id=1154756705 instance=ExtResource("4_4qegb")]
+position = Vector2(502, -1)
+feather_rate = 0.1
+
+[node name="BCount" type="Label" parent="." unique_id=2070505110]
+offset_left = 963.0
+offset_top = 44.0
+offset_right = 1003.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.92941177, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_dke22")
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="LCount" type="Label" parent="." unique_id=1118003371]
+offset_left = 1062.0
+offset_top = 44.0
+offset_right = 1102.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.92941177, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_dke22")
+theme_override_font_sizes/font_size = 50
+text = "3"
+
+[editable path="Box2"]
