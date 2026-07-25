@@ -12,7 +12,7 @@ texture = ExtResource("1_elqb8")
 centered = false
 
 [node name="Pillow" parent="." unique_id=1652305971 instance=ExtResource("2_rarhs")]
-position = Vector2(120, 370)
+position = Vector2(120, 339)
 
 [node name="FeatherManager" parent="." unique_id=615271918 instance=ExtResource("4_rarhs")]
 visible = false
