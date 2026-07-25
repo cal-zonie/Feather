@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b3l4ce6omieam"]
+
+[ext_resource type="Texture2D" uid="uid://bawtqwr6viqum" path="res://assets/chute.png" id="1_bhwpd"]
+[ext_resource type="Script" uid="uid://30e8a1fj5d8f" path="res://scripts/chute.gd" id="1_xi8x8"]
+[ext_resource type="PackedScene" uid="uid://drwa0ds6l0imt" path="res://scenes/FeatherManager.tscn" id="3_x2n3r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0q5d"]
+size = Vector2(46, 46)
+
+[node name="Chute" type="Node2D" unique_id=1154756705 node_paths=PackedStringArray("feather_manager")]
+script = ExtResource("1_xi8x8")
+feather_manager = NodePath("FeatherManager")
+feather_rate = 0.5
+
+[node name="Chute" type="TextureRect" parent="." unique_id=2080283654]
+offset_right = 145.0
+offset_bottom = 155.0
+texture = ExtResource("1_bhwpd")
+
+[node name="FeatherManager" parent="." unique_id=615271918 instance=ExtResource("3_x2n3r")]
+position = Vector2(69, 142)
+
+[node name="Lever" type="Area2D" parent="." unique_id=2132495587]
+position = Vector2(158, 62)
+
+[node name="Border" type="ColorRect" parent="Lever" unique_id=715313468]
+offset_left = -3.0
+offset_top = -5.0
+offset_right = 41.0
+offset_bottom = 39.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Color" type="ColorRect" parent="Lever" unique_id=1950037107]
+z_index = 1
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 39.0
+offset_bottom = 37.0
+mouse_filter = 2
+color = Color(0.3254902, 0, 0.015686275, 1)
+
+[node name="Shape" type="CollisionShape2D" parent="Lever" unique_id=613487638]
+position = Vector2(19, 17)
+shape = SubResource("RectangleShape2D_q0q5d")
+
+[connection signal="input_event" from="Lever" to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="Lever" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Lever" to="." method="_on_mouse_exited"]
