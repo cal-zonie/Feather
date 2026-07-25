@@ -4,5 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://5pfvas81oonw" path="res://scenes/components/Feather.tscn" id="2_86ac0"]
 
 [node name="FeatherManager" type="Node2D" unique_id=615271918]
+z_index = 1
 script = ExtResource("1_oq5i8")
 BASE_FEATHER = ExtResource("2_86ac0")

@@ -28,4 +28,5 @@ func add_feather():
 
 func pickup_feather(feather: Feather):
 	held_feather = feather
+	feather.reparent(self, true)
 	move_child(feather, -1)

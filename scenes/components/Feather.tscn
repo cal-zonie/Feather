@@ -9,9 +9,9 @@ radius = 14.64517
 height = 60.447216
 
 [node name="Feather" type="Area2D" unique_id=1488115311]
+collision_layer = 15
 script = ExtResource("1_xvemx")
 fall_speed = 0.715
-min_fall_height = 434.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2072141648]
 position = Vector2(3, 1)

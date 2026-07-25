@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="2_rvslj"]
 [ext_resource type="PackedScene" uid="uid://wb3yf1ckvov8" path="res://scenes/components/Box.tscn" id="2_vcsgt"]
 [ext_resource type="PackedScene" uid="uid://b3l4ce6omieam" path="res://scenes/components/Chute.tscn" id="4_rarhs"]
+[ext_resource type="Texture2D" uid="uid://8f1l3aiva1ey" path="res://assets/box4.png" id="4_vcsgt"]
 
 [node name="Main" type="Node2D" unique_id=981665366]
 
@@ -14,22 +15,15 @@ centered = false
 [node name="Box" parent="." unique_id=494118545 instance=ExtResource("2_vcsgt")]
 position = Vector2(941, 508)
 
-[node name="Box2" parent="." unique_id=2132267315 instance=ExtResource("2_vcsgt")]
-modulate = Color(1, 1, 1, 0.7019608)
-z_index = 1
-position = Vector2(942, 507)
-
-[node name="box2" parent="Box2" index="1" unique_id=1185639623]
-visible = false
-
-[node name="box4" parent="Box2" index="3" unique_id=1234887100]
-visible = true
-
-[node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("2_rvslj")]
-position = Vector2(553, 393)
-
 [node name="Chute" parent="." unique_id=1154756705 instance=ExtResource("4_rarhs")]
 position = Vector2(502, -1)
 feather_rate = 0.1
 
-[editable path="Box2"]
+[node name="box4" type="Sprite2D" parent="." unique_id=722640735]
+modulate = Color(1, 1, 1, 0.5803922)
+z_index = 1
+position = Vector2(942, 509)
+texture = ExtResource("4_vcsgt")
+
+[node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("2_rvslj")]
+position = Vector2(553, 393)
