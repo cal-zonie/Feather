@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://bsnxoabjpefwh"
 [autoload]
 
 Manager="*uid://bbj4djruiwtib"
+Hand="*uid://c2pmqscftelrp"
 
 [display]
 

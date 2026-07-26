@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bxqwh8jg08ars" path="res://scripts/main_menu.gd" id="1_bqojv"]
 [ext_resource type="Texture2D" uid="uid://b2nyttrle26k4" path="res://assets/logo.png" id="2_ldf1p"]
-[ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="3_ldf1p"]
 
 [node name="MainMenu" type="Control" unique_id=2081880945]
 layout_mode = 3
@@ -131,8 +130,6 @@ flat = true
 [node name="TextureRect" type="TextureRect" parent="Elements/Split" unique_id=1576157217]
 layout_mode = 2
 texture = ExtResource("2_ldf1p")
-
-[node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("3_ldf1p")]
 
 [connection signal="pressed" from="Elements/Split/Menu/MainButtons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Elements/Split/Menu/MainButtons/Options" to="." method="_on_options_pressed"]

@@ -12,35 +12,32 @@ func _ready():
 	conveyor_speed = Manager.conveyor_speed[Manager.current_level - 1]
 	update_quota()
 	update_lives()
+	$Alarm.play()
 	request_ready()
 	
-func _process(_delta):
-	pass
-	#if Input.is_action_just_pressed("Correct Box"):
-		#submit_box(5, 5)
-	#
-	#if Input.is_action_just_pressed("Fail Box"):
-		#submit_box(5, 7)
 		
 func submit_box(feathers: int, required: int):
 	if feathers == required:
-		#play something??
+		$Correct.play()
 		boxes_complete += 1
 		update_quota()
 		if boxes_complete == quota:
+			#fade to win screen
 			#play win sound
 			Manager.end_level(lives_remaining)
 	else:
 		if feathers > required:
-			#play too much down
+			$TooMuch.play()
 			pass
 		else:
-			#play not enough down
+			$NotEnough.play()
 			pass
 		
 		lives_remaining -= 1
 		update_lives()
+		await get_tree().create_timer(2.0).timeout
 		if lives_remaining == 0:
+			#fade to lose screen (big x's?)
 			#play lose sound
 			Manager.end_level(lives_remaining)
 

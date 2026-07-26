@@ -7,7 +7,7 @@ func _ready():
 
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://scenes/menus/LevelSelect.tscn")
-	
+
 func _on_options_pressed():
 	$Elements/Split/Menu/MainButtons.visible = false
 	$Elements/Split/Menu/OptionsButtons.visible = true
