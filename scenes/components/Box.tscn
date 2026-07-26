@@ -17,6 +17,7 @@ script = ExtResource("1_ovm6q")
 visible = false
 
 [node name="box" type="Sprite2D" parent="Box1" unique_id=1185639623]
+z_index = -1
 texture = ExtResource("2_ho50r")
 
 [node name="box_front" type="Sprite2D" parent="Box1" unique_id=1234887100]
@@ -28,6 +29,7 @@ texture = ExtResource("2_ho50r")
 visible = false
 
 [node name="box" type="Sprite2D" parent="Box2" unique_id=1999827131]
+z_index = -1
 texture = ExtResource("3_78kbw")
 
 [node name="box_front" type="Sprite2D" parent="Box2" unique_id=1650902209]
@@ -39,6 +41,7 @@ texture = ExtResource("3_78kbw")
 visible = false
 
 [node name="box" type="Sprite2D" parent="Box3" unique_id=34917105]
+z_index = -1
 texture = ExtResource("4_eu1b7")
 
 [node name="box_front" type="Sprite2D" parent="Box3" unique_id=1661835962]
@@ -50,6 +53,7 @@ texture = ExtResource("4_eu1b7")
 visible = false
 
 [node name="box" type="Sprite2D" parent="Box4" unique_id=942124918]
+z_index = -1
 texture = ExtResource("5_wbuxb")
 
 [node name="box_front" type="Sprite2D" parent="Box4" unique_id=303939431]

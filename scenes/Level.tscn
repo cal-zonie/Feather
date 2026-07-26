@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6ttk442pn7m4"]
 
 [ext_resource type="Script" uid="uid://bkamr2kemnv5n" path="res://scripts/level.gd" id="1_qifjx"]
-[ext_resource type="Texture2D" uid="uid://bu1aeid7sd26q" path="res://assets/wall.png" id="2_2eouu"]
+[ext_resource type="Texture2D" uid="uid://ieno2u5vvyr4" path="res://assets/wall_vents.png" id="2_xyj84"]
 [ext_resource type="PackedScene" uid="uid://bkm6qtfg7eril" path="res://scenes/components/Conveyor.tscn" id="3_4qegb"]
 [ext_resource type="PackedScene" uid="uid://b3l4ce6omieam" path="res://scenes/components/Chute.tscn" id="4_4qegb"]
 [ext_resource type="FontFile" uid="uid://ojg4lwe2he01" path="res://assets/fonts/Anton-Regular.ttf" id="5_rccsh"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://vhobjqr5tmhh" path="res://assets/chicken.png" id="11_ax7ne"]
 [ext_resource type="AudioStream" uid="uid://bcq26kce3lb4u" path="res://assets/sfx/Winner Winner.mp3" id="11_m0xki"]
 [ext_resource type="AudioStream" uid="uid://bo45admni25ug" path="res://assets/sfx/You Lose.mp3" id="12_xe3hh"]
+[ext_resource type="AudioStream" uid="uid://jrkdljrsapew" path="res://assets/sfx/wind.mp3" id="13_xyj84"]
 [ext_resource type="Texture2D" uid="uid://dtr8xtxtgs3w1" path="res://assets/redbits_1.png" id="14_opqd1"]
 [ext_resource type="Texture2D" uid="uid://bjrr6s0casa5t" path="res://assets/redbits_4.png" id="15_xyj84"]
 [ext_resource type="Texture2D" uid="uid://bv43aax56c657" path="res://assets/redbits_6.png" id="16_gips2"]
@@ -21,13 +22,20 @@
 script = ExtResource("1_qifjx")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1143402216]
+<<<<<<< HEAD
+texture = ExtResource("2_xyj84")
+=======
+z_index = -5
 texture = ExtResource("2_2eouu")
+>>>>>>> 7b2c5fd49e87e2864f848b91d89e577626fcfd80
 centered = false
 
 [node name="Conveyor" parent="." unique_id=100981104 instance=ExtResource("3_4qegb")]
+z_index = -1
 position = Vector2(-4, 613)
 
 [node name="Chute" parent="." unique_id=1154756705 instance=ExtResource("4_4qegb")]
+z_index = -1
 position = Vector2(492, -4)
 feather_rate = 0.1
 
@@ -114,10 +122,10 @@ theme_override_font_sizes/font_size = 40
 text = "X"
 
 [node name="Quota Label" type="Label" parent="." unique_id=439523152]
-offset_left = 988.0
-offset_top = 221.0
-offset_right = 1256.0
-offset_bottom = 283.0
+offset_left = 986.0
+offset_top = 247.0
+offset_right = 1254.0
+offset_bottom = 309.0
 theme_override_colors/font_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
@@ -126,10 +134,10 @@ theme_override_font_sizes/font_size = 40
 text = "Quota"
 
 [node name="Remaining Label" type="Label" parent="." unique_id=1929373544]
-offset_left = 954.0
-offset_top = 365.0
-offset_right = 1222.0
-offset_bottom = 427.0
+offset_left = 952.0
+offset_top = 391.0
+offset_right = 1220.0
+offset_bottom = 453.0
 theme_override_colors/font_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 4
@@ -140,10 +148,10 @@ text = "Remaining"
 [node name="Quota" type="Control" parent="." unique_id=2056910276]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 978.0
-offset_top = 283.0
-offset_right = 1018.0
-offset_bottom = 323.0
+offset_left = 976.0
+offset_top = 309.0
+offset_right = 1016.0
+offset_bottom = 349.0
 scale = Vector2(2, 2)
 
 [node name="Border" type="ColorRect" parent="Quota" unique_id=453856072]
@@ -221,6 +229,10 @@ bus = &"SFX"
 
 [node name="Loser" type="AudioStreamPlayer2D" parent="." unique_id=699061488]
 stream = ExtResource("12_xe3hh")
+bus = &"SFX"
+
+[node name="Wind" type="AudioStreamPlayer2D" parent="." unique_id=610292839]
+stream = ExtResource("13_xyj84")
 bus = &"SFX"
 
 [node name="Pause" type="Control" parent="." unique_id=1757605450]

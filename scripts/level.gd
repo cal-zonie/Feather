@@ -4,6 +4,9 @@ var lives_remaining: int = 0
 var boxes_complete: int = 0
 var quota: int
 var conveyor_speed: float
+var wind_timer = 10
+var wind_max_timer = 10
+var wind_wait_timer = 15
 
 func _ready():
 	$Pause/Margin/Stuff/OptionsButtons/SFXVolume/SFXSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
@@ -22,9 +25,19 @@ func _ready():
 	request_ready()
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
-func _process(_delta):
+func _process(delta):
 	if Input.is_action_just_pressed("pause") and not $Win.visible and not $Lose.visible:
 		toggle_pause()
+	
+	
+	if Manager.in_level and Manager.current_level == 3:
+		wind_timer -= delta
+		if wind_timer < 0:
+			Manager.wind = !Manager.wind
+			if Manager.wind:
+				$Wind.play()
+			wind_timer = wind_max_timer if Manager.wind else wind_wait_timer
+			Manager.wind_speed *= -1 if Manager.wind else 1
 		
 func submit_box(feathers: int, required: int):
 	if feathers == required:
