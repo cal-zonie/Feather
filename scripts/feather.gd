@@ -43,6 +43,8 @@ func _process(delta):
 			position += Vector2.DOWN * (fall_modifier * fall_speed) * delta
 			rotate(fall_modifier * rotation_speed * delta)
 			position.x -= fall_modifier * float_speed * delta
+			if Manager.wind:
+				position.x -= Manager.wind_speed * delta
 			if rotation < rotation_limit and rotation_limit < 0 or rotation > rotation_limit and rotation_limit > 0:
 				rotation_speed *= -1
 				rotation_limit *= -1
