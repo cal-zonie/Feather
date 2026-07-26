@@ -23,9 +23,6 @@ func _process(delta):
 			wind = !wind
 			wind_timer = wind_max_timer if wind else wind_wait_timer
 			wind_speed *= -1 if wind else 1
-			print(wind)
-			print(wind_timer)
-			print(wind_speed)
 
 func get_conveyor_speed():
 	return conveyor_speed[current_level - 1]

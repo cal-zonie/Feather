@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://nbl45pay638e" path="res://scripts/box.gd" id="1_ovm6q"]
 [ext_resource type="Texture2D" uid="uid://da5tytpm7mucf" path="res://assets/box.png" id="2_ho50r"]
+[ext_resource type="Texture2D" uid="uid://toriq3o6klqb" path="res://assets/box_1.png" id="3_78kbw"]
+[ext_resource type="Texture2D" uid="uid://bfafwuso7euj8" path="res://assets/box_2.png" id="4_eu1b7"]
+[ext_resource type="Texture2D" uid="uid://df78kx7sykpcs" path="res://assets/box_3.png" id="5_wbuxb"]
 [ext_resource type="FontFile" uid="uid://ojg4lwe2he01" path="res://assets/fonts/Anton-Regular.ttf" id="6_78kbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7y7k"]
@@ -10,13 +13,49 @@ size = Vector2(77, 34)
 [node name="Box" type="Area2D" unique_id=261152349]
 script = ExtResource("1_ovm6q")
 
-[node name="box" type="Sprite2D" parent="." unique_id=1185639623]
+[node name="Box1" type="Node2D" parent="." unique_id=774105752]
+visible = false
+
+[node name="box" type="Sprite2D" parent="Box1" unique_id=1185639623]
 texture = ExtResource("2_ho50r")
 
-[node name="box_front" type="Sprite2D" parent="." unique_id=1234887100]
+[node name="box_front" type="Sprite2D" parent="Box1" unique_id=1234887100]
 self_modulate = Color(1, 1, 1, 0.4862745)
 z_index = 2
 texture = ExtResource("2_ho50r")
+
+[node name="Box2" type="Node2D" parent="." unique_id=671572429]
+visible = false
+
+[node name="box" type="Sprite2D" parent="Box2" unique_id=1999827131]
+texture = ExtResource("3_78kbw")
+
+[node name="box_front" type="Sprite2D" parent="Box2" unique_id=1650902209]
+self_modulate = Color(1, 1, 1, 0.4862745)
+z_index = 2
+texture = ExtResource("3_78kbw")
+
+[node name="Box3" type="Node2D" parent="." unique_id=583245714]
+visible = false
+
+[node name="box" type="Sprite2D" parent="Box3" unique_id=34917105]
+texture = ExtResource("4_eu1b7")
+
+[node name="box_front" type="Sprite2D" parent="Box3" unique_id=1661835962]
+self_modulate = Color(1, 1, 1, 0.4862745)
+z_index = 2
+texture = ExtResource("4_eu1b7")
+
+[node name="Box4" type="Node2D" parent="." unique_id=1167777417]
+visible = false
+
+[node name="box" type="Sprite2D" parent="Box4" unique_id=942124918]
+texture = ExtResource("5_wbuxb")
+
+[node name="box_front" type="Sprite2D" parent="Box4" unique_id=303939431]
+self_modulate = Color(1, 1, 1, 0.4862745)
+z_index = 2
+texture = ExtResource("5_wbuxb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1044653004]
 position = Vector2(1.5, 62)
