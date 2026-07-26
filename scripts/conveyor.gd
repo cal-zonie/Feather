@@ -12,7 +12,7 @@ signal on_submit_box(feather_count: int, required_feathers: int)
 func _ready():
 	speed = Manager.get_conveyor_speed()
 	#box_spawn_timer = Manager.get something
-	box_spawn_timer = 300.0 / speed
+	box_spawn_timer = Manager.get_box_rate()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
