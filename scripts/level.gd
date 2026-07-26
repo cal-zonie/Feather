@@ -20,7 +20,7 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("pause"):
+	if Input.is_action_just_pressed("pause") and not $Win.visible and not $Lose.visible:
 		toggle_pause()
 		
 func submit_box(feathers: int, required: int):
@@ -29,9 +29,11 @@ func submit_box(feathers: int, required: int):
 		boxes_complete += 1
 		update_quota()
 		if boxes_complete == quota:
-			#fade to win screen
-			#play win sound
-			Manager.end_level(lives_remaining)
+			get_tree().paused = true
+			$Win.visible = true
+			#todo add fade
+			$Winner.play()
+			pass
 	else:
 		if feathers > required:
 			$TooMuch.play()
@@ -44,9 +46,10 @@ func submit_box(feathers: int, required: int):
 		update_lives()
 		await get_tree().create_timer(2.0).timeout
 		if lives_remaining == 0:
-			#fade to lose screen (big x's?)
-			#play lose sound
-			Manager.end_level(lives_remaining)
+			get_tree().paused = true
+			$Lose.visible = true
+			#todo add fade
+			$Loser.play()
 
 func update_lives():
 	for i in range(3):
@@ -88,3 +91,7 @@ func _on_music_slider_value_changed(value):
 func _on_return_pressed():
 	$Pause/Margin/Stuff/OptionsButtons.visible = false
 	$Pause/Margin/Stuff/PauseButtons.visible = true
+
+func _on_end_pressed():
+	get_tree().paused = false
+	Manager.end_level(lives_remaining)
