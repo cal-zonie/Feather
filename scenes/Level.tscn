@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bu1aeid7sd26q" path="res://assets/wall.png" id="2_2eouu"]
 [ext_resource type="PackedScene" uid="uid://bkm6qtfg7eril" path="res://scenes/components/Conveyor.tscn" id="3_4qegb"]
 [ext_resource type="PackedScene" uid="uid://b3l4ce6omieam" path="res://scenes/components/Chute.tscn" id="4_4qegb"]
+[ext_resource type="FontFile" uid="uid://ojg4lwe2he01" path="res://assets/fonts/Anton-Regular.ttf" id="5_rccsh"]
 [ext_resource type="FontFile" uid="uid://bdbh845suu1e1" path="res://assets/fonts/DigitTech7-Regular.ttf" id="6_dke22"]
 [ext_resource type="AudioStream" uid="uid://dn53jsjt0e5d3" path="res://assets/sfx/Alarm.mp3" id="7_4qegb"]
 [ext_resource type="AudioStream" uid="uid://d144id08gx0mk" path="res://assets/sfx/Too Much Down.mp3" id="7_faw0r"]
@@ -27,10 +28,11 @@ feather_rate = 0.1
 [node name="Lives" type="Control" parent="." unique_id=703142261]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 925.0
-offset_top = 52.0
-offset_right = 965.0
-offset_bottom = 92.0
+offset_left = 943.0
+offset_top = 14.0
+offset_right = 983.0
+offset_bottom = 54.0
+scale = Vector2(2, 2)
 
 [node name="Border" type="ColorRect" parent="Lives" unique_id=1590836302]
 layout_mode = 0
@@ -105,13 +107,38 @@ theme_override_constants/line_spacing = 0
 theme_override_font_sizes/font_size = 40
 text = "X"
 
+[node name="Quota Label" type="Label" parent="." unique_id=439523152]
+offset_left = 985.0
+offset_top = 247.0
+offset_right = 1253.0
+offset_bottom = 309.0
+theme_override_colors/font_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_rccsh")
+theme_override_font_sizes/font_size = 40
+text = "Quota"
+
+[node name="Remaining Label" type="Label" parent="." unique_id=1929373544]
+offset_left = 951.0
+offset_top = 391.0
+offset_right = 1219.0
+offset_bottom = 453.0
+theme_override_colors/font_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_rccsh")
+theme_override_font_sizes/font_size = 40
+text = "Remaining"
+
 [node name="Quota" type="Control" parent="." unique_id=2056910276]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1030.0
-offset_top = 52.0
-offset_right = 1070.0
-offset_bottom = 92.0
+offset_left = 975.0
+offset_top = 309.0
+offset_right = 1015.0
+offset_bottom = 349.0
+scale = Vector2(2, 2)
 
 [node name="Border" type="ColorRect" parent="Quota" unique_id=453856072]
 layout_mode = 0
