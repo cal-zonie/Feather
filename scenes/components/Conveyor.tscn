@@ -25,5 +25,5 @@ scale = Vector2(1.52, 1.52)
 texture = ExtResource("1_xvu53")
 
 [node name="Boxes" type="Node2D" parent="." unique_id=15744601]
-position = Vector2(-224, -98)
+position = Vector2(-125, -100)
 scale = Vector2(1.0000001, 1.0000001)
