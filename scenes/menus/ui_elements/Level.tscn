@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://cu626dkytv0fu"]
+
+[ext_resource type="Texture2D" uid="uid://cw81nkm6c48g3" path="res://assets/star.png" id="1_m2x1y"]
+[ext_resource type="Script" uid="uid://b280dmfghd172" path="res://scripts/level_icon.gd" id="1_pqru5"]
+
+[node name="Level" type="Button" unique_id=1179260887]
+custom_minimum_size = Vector2(150, 150)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1002.0
+offset_bottom = -498.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pqru5")
+
+[node name="Border" type="ColorRect" parent="." unique_id=2131058778]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 150.0
+color = Color(0.1584723, 0.15847233, 0.1584723, 1)
+
+[node name="Background" type="ColorRect" parent="." unique_id=451421256]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 145.0
+offset_bottom = 145.0
+color = Color(0.446777, 0.44677705, 0.44677693, 1)
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1717657413]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 160.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Info" type="VBoxContainer" parent="Margin" unique_id=651274274]
+layout_mode = 2
+
+[node name="Number" type="Label" parent="Margin/Info" unique_id=1424259349]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "1"
+horizontal_alignment = 1
+
+[node name="Stars" type="HBoxContainer" parent="Margin/Info" unique_id=1509339777]
+layout_mode = 2
+alignment = 1
+
+[node name="1" type="TextureRect" parent="Margin/Info/Stars" unique_id=117430768]
+layout_mode = 2
+texture = ExtResource("1_m2x1y")
+
+[node name="2" type="TextureRect" parent="Margin/Info/Stars" unique_id=678589951]
+layout_mode = 2
+texture = ExtResource("1_m2x1y")
+
+[node name="3" type="TextureRect" parent="Margin/Info/Stars" unique_id=765535867]
+layout_mode = 2
+texture = ExtResource("1_m2x1y")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

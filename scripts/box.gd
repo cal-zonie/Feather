@@ -13,8 +13,8 @@ func _process(delta):
 	position.x += speed * delta
 
 func _on_area_entered(area):
-	area.on_box = true
 	if area is Feather and not area.dragging and area.falling:
+		area.on_box = true
 		area.falling = false
 		area.call_deferred("reparent", self)
 

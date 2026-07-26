@@ -3,9 +3,10 @@ extends Control
 func _ready():
 	$Elements/Split/Menu/OptionsButtons/SFXVolume/SFXSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
 	$Elements/Split/Menu/OptionsButtons/MusicVolume/MusicSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
+	request_ready()
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file(str("res://scenes/Main.tscn"))
+	get_tree().change_scene_to_file("res://scenes/menus/LevelSelect.tscn")
 	
 func _on_options_pressed():
 	$Elements/Split/Menu/MainButtons.visible = false
