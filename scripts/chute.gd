@@ -10,6 +10,7 @@ var time_since_feather: float
 func _ready():
 	$Lever/On.visible = false
 	$Lever/Off.visible = true
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
