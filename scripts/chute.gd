@@ -8,7 +8,8 @@ var time_since_feather: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Lever/Color.color = Color.DARK_RED
+	$Lever/On.visible = false
+	$Lever/Off.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -33,11 +34,13 @@ func toggle_lever():
 	if lever_state == false:
 		$LeverSound.play()
 		lever_state = true
-		$Lever/Color.color = Color.RED
+		$Lever/Off.visible = false
+		$Lever/On.visible = true
 		$ChuteSound.play()
 	elif lever_state == true:
 		$LeverSound.play()
 		lever_state = false
-		$Lever/Color.color = Color.DARK_RED
+		$Lever/On.visible = false
+		$Lever/Off.visible = true
 		$ChuteSound.stop()
 	

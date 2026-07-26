@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://je64daddf10q"
-path="res://.godot/imported/DigitTech9-Regular.ttf-c47a6696158aacd2c93112cae24f8aa6.fontdata"
+uid="uid://ojg4lwe2he01"
+path="res://.godot/imported/Anton-Regular.ttf-9d02eb88e1f4075ba3720c7d643c331d.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/DigitTech9-Regular.ttf"
-dest_files=["res://.godot/imported/DigitTech9-Regular.ttf-c47a6696158aacd2c93112cae24f8aa6.fontdata"]
+source_file="res://assets/fonts/Anton-Regular.ttf"
+dest_files=["res://.godot/imported/Anton-Regular.ttf-9d02eb88e1f4075ba3720c7d643c331d.fontdata"]
 
 [params]
 

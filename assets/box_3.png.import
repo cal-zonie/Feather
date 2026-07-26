@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btirrtin1naco"
-path="res://.godot/imported/pillow_highlight.png-8c2fbe42810df9fca4b7a74d67eef2fe.ctex"
+uid="uid://df78kx7sykpcs"
+path="res://.godot/imported/box_3.png-9ba4133058f706e1881c2ef6573f511e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pillow_highlight.png"
-dest_files=["res://.godot/imported/pillow_highlight.png-8c2fbe42810df9fca4b7a74d67eef2fe.ctex"]
+source_file="res://assets/box_3.png"
+dest_files=["res://.godot/imported/box_3.png-9ba4133058f706e1881c2ef6573f511e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3swprbb4y06c"
-path="res://.godot/imported/feather background.png-61125ac12fefdb04ad47b166a75e70a6.ctex"
+uid="uid://ieno2u5vvyr4"
+path="res://.godot/imported/wall_vents.png-4d3be71ebb24bcdcf3fcd1e61960436c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/feather background.png"
-dest_files=["res://.godot/imported/feather background.png-61125ac12fefdb04ad47b166a75e70a6.ctex"]
+source_file="res://assets/wall_vents.png"
+dest_files=["res://.godot/imported/wall_vents.png-4d3be71ebb24bcdcf3fcd1e61960436c.ctex"]
 
 [params]
 

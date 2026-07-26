@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://wb3yf1ckvov8"]
 
-[ext_resource type="Texture2D" uid="uid://dwu4rgp656255" path="res://assets/box2.png" id="1_m8p8s"]
 [ext_resource type="Script" uid="uid://nbl45pay638e" path="res://scripts/box.gd" id="1_ovm6q"]
-[ext_resource type="Texture2D" uid="uid://dm8db0lh1bmnr" path="res://assets/box1.png" id="2_315le"]
-[ext_resource type="Texture2D" uid="uid://pd4icr7pfn6t" path="res://assets/box3.png" id="3_ho50r"]
-[ext_resource type="Texture2D" uid="uid://8f1l3aiva1ey" path="res://assets/box4.png" id="4_tls8h"]
+[ext_resource type="Texture2D" uid="uid://da5tytpm7mucf" path="res://assets/box.png" id="2_ho50r"]
+[ext_resource type="FontFile" uid="uid://ojg4lwe2he01" path="res://assets/fonts/Anton-Regular.ttf" id="6_78kbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7y7k"]
 size = Vector2(77, 34)
@@ -12,21 +10,13 @@ size = Vector2(77, 34)
 [node name="Box" type="Area2D" unique_id=261152349]
 script = ExtResource("1_ovm6q")
 
-[node name="box1" type="Sprite2D" parent="." unique_id=953307794]
-visible = false
-texture = ExtResource("1_m8p8s")
+[node name="box" type="Sprite2D" parent="." unique_id=1185639623]
+texture = ExtResource("2_ho50r")
 
-[node name="box2" type="Sprite2D" parent="." unique_id=1185639623]
-texture = ExtResource("2_315le")
-
-[node name="box3" type="Sprite2D" parent="." unique_id=1090997961]
-visible = false
-texture = ExtResource("3_ho50r")
-
-[node name="box4" type="Sprite2D" parent="." unique_id=1234887100]
+[node name="box_front" type="Sprite2D" parent="." unique_id=1234887100]
 self_modulate = Color(1, 1, 1, 0.4862745)
 z_index = 2
-texture = ExtResource("4_tls8h")
+texture = ExtResource("2_ho50r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1044653004]
 position = Vector2(1.5, 62)
@@ -35,11 +25,15 @@ shape = SubResource("RectangleShape2D_q7y7k")
 [node name="Feathers" type="Node2D" parent="." unique_id=1349041478]
 
 [node name="Label" type="Label" parent="." unique_id=2144534536]
-offset_left = -48.0
-offset_top = -16.0
-offset_right = 47.0
-offset_bottom = 18.0
-text = "Feathers: 1"
+offset_left = -50.0
+offset_top = -6.0
+offset_right = 45.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("6_78kbw")
+theme_override_font_sizes/font_size = 50
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

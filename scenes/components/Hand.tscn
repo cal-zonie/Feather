@@ -1,16 +1,22 @@
 [gd_scene format=3 uid="uid://c2pmqscftelrp"]
 
 [ext_resource type="Script" uid="uid://cnbe7xnyibe8j" path="res://scripts/hand.gd" id="1_ijqby"]
-[ext_resource type="Texture2D" uid="uid://bswh7bdng72eb" path="res://assets/hand.png" id="2_vy5fr"]
+[ext_resource type="Texture2D" uid="uid://dq2m1ssw3n3ta" path="res://assets/hand_open.png" id="2_bxm87"]
 [ext_resource type="AudioStream" uid="uid://dlq0wrrktfcqs" path="res://assets/sfx/Click.mp3" id="3_2rhyb"]
+[ext_resource type="Texture2D" uid="uid://7k7g525svq23" path="res://assets/hand_pinch.png" id="3_y43eh"]
 
 [node name="Hand" type="Node2D" unique_id=2005192961]
 z_index = 4096
 script = ExtResource("1_ijqby")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1279356268]
-position = Vector2(19, 23)
-texture = ExtResource("2_vy5fr")
+[node name="Open" type="Sprite2D" parent="." unique_id=1279356268]
+position = Vector2(10, -3)
+texture = ExtResource("2_bxm87")
+
+[node name="Pinch" type="Sprite2D" parent="." unique_id=1097614695]
+visible = false
+position = Vector2(10, -3)
+texture = ExtResource("3_y43eh")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=1660566504]
 stream = ExtResource("3_2rhyb")

@@ -1,28 +1,29 @@
 [gd_scene format=3 uid="uid://bkm6qtfg7eril"]
 
 [ext_resource type="Script" uid="uid://bamfksxdqr1jl" path="res://scripts/conveyor.gd" id="1_ebewc"]
-[ext_resource type="Texture2D" uid="uid://3u0n2n32u8gu" path="res://assets/conveyor.png" id="1_xvu53"]
+[ext_resource type="Texture2D" uid="uid://b1x5rxwxiwutv" path="res://assets/conveyor.png" id="1_xvu53"]
 [ext_resource type="PackedScene" uid="uid://wb3yf1ckvov8" path="res://scenes/components/Box.tscn" id="2_xw2iy"]
 
 [node name="Conveyor" type="Node2D" unique_id=100981104]
-rotation = 0.0052557224
 script = ExtResource("1_ebewc")
 template_box = ExtResource("2_xw2iy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1069018348]
-scale = Vector2(0.4, 0.4)
+position = Vector2(190, -2)
+scale = Vector2(1.52, 1.52)
 texture = ExtResource("1_xvu53")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1779936406]
-position = Vector2(453.99377, -2.386087)
-scale = Vector2(0.4, 0.4)
+position = Vector2(579, 39)
+rotation = 3.1415927
+scale = Vector2(1.52, 1.52)
 texture = ExtResource("1_xvu53")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=110540021]
-position = Vector2(906.9823, -5.7669044)
-scale = Vector2(0.4, 0.4)
+position = Vector2(968, -2)
+scale = Vector2(1.52, 1.52)
 texture = ExtResource("1_xvu53")
 
 [node name="Boxes" type="Node2D" parent="." unique_id=15744601]
-position = Vector2(-223.42793, -80.826866)
+position = Vector2(-224, -98)
 scale = Vector2(1.0000001, 1.0000001)
