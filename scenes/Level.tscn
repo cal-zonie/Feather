@@ -23,8 +23,7 @@ script = ExtResource("1_qifjx")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1143402216]
 z_index = -5
-texture = ExtResource("2_2eouu")
->>>>>>> 7b2c5fd49e87e2864f848b91d89e577626fcfd80
+texture = ExtResource("2_xyj84")
 centered = false
 
 [node name="Conveyor" parent="." unique_id=100981104 instance=ExtResource("3_4qegb")]
