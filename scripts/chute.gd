@@ -17,7 +17,6 @@ func _process(delta):
 		if time_since_feather >= feather_rate:
 			time_since_feather = 0
 			feather_manager.add_feather()
-		
 
 func _on_mouse_entered():
 	mouse_inside = true
