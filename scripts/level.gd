@@ -6,6 +6,9 @@ var quota: int
 var conveyor_speed: float
 
 func _ready():
+	$Pause/Margin/Stuff/OptionsButtons/SFXVolume/SFXSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")))
+	$Pause/Margin/Stuff/OptionsButtons/MusicVolume/MusicSlider.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
+	
 	boxes_complete = 0
 	lives_remaining = 3
 	quota = Manager.quota[Manager.current_level - 1]
@@ -14,7 +17,11 @@ func _ready():
 	update_lives()
 	$Alarm.play()
 	request_ready()
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	
+func _process(_delta):
+	if Input.is_action_just_pressed("pause"):
+		toggle_pause()
 		
 func submit_box(feathers: int, required: int):
 	if feathers == required:
@@ -52,4 +59,32 @@ func update_lives():
 func update_quota():
 	get_node("Quota/Numbers/H/Tens_Back/Tens").text = str(int((quota - boxes_complete) / 10))
 	get_node("Quota/Numbers/H/Ones_Back/Ones").text = str((quota - boxes_complete) % 10)
+
+func toggle_pause():
+	if $Pause.visible:
+		$Pause.visible = false
+		get_tree().paused = false
+	else:
+		get_tree().paused = true
+		$Pause.visible = true
 	
+func _on_resume_pressed():
+	toggle_pause()
+
+func _on_options_pressed():
+	$Pause/Margin/Stuff/PauseButtons.visible = false
+	$Pause/Margin/Stuff/OptionsButtons.visible = true
+
+func _on_level_select_pressed():
+	get_tree().paused = false
+	Manager.quit_level()
+
+func _on_sfx_slider_value_changed(value):
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("SFX"), value)
+
+func _on_music_slider_value_changed(value):
+	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("Music"), value)
+
+func _on_return_pressed():
+	$Pause/Margin/Stuff/OptionsButtons.visible = false
+	$Pause/Margin/Stuff/PauseButtons.visible = true

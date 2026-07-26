@@ -13,6 +13,7 @@ func _ready():
 	speed = Manager.get_conveyor_speed()
 	#box_spawn_timer = Manager.get something
 	box_spawn_timer = Manager.get_box_rate()
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

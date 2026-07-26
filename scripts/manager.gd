@@ -33,3 +33,8 @@ func end_level(lives_left: int):
 	in_level = false
 	current_level = 0
 	get_tree().change_scene_to_file("res://scenes/menus/LevelSelect.tscn")
+
+func quit_level():
+	in_level = false
+	current_level = 0
+	get_tree().change_scene_to_file("res://scenes/menus/LevelSelect.tscn")

@@ -6,6 +6,7 @@ func _ready():
 	get_viewport().physics_object_picking = true
 	get_viewport().physics_object_picking_sort = true
 	get_viewport().physics_object_picking_first_only = true
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 func _process(delta):
 	position = get_viewport().get_mouse_position()
