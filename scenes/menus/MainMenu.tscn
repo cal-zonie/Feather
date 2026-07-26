@@ -81,6 +81,7 @@ visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 20
+alignment = 1
 
 [node name="SFXVolume" type="VBoxContainer" parent="Elements/Split/Menu/OptionsButtons" unique_id=1433334318]
 layout_mode = 2

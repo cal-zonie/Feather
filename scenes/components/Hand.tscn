@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dq2m1ssw3n3ta" path="res://assets/hand_open.png" id="2_bxm87"]
 [ext_resource type="AudioStream" uid="uid://dlq0wrrktfcqs" path="res://assets/sfx/Click.mp3" id="3_2rhyb"]
 [ext_resource type="Texture2D" uid="uid://7k7g525svq23" path="res://assets/hand_pinch.png" id="3_y43eh"]
+[ext_resource type="AudioStream" uid="uid://e6wt0dhjguwr" path="res://assets/music/level_bgm.mp3" id="5_y43eh"]
 
 [node name="Hand" type="Node2D" unique_id=2005192961]
 z_index = 4096
@@ -20,5 +21,11 @@ texture = ExtResource("3_y43eh")
 
 [node name="Click" type="AudioStreamPlayer2D" parent="." unique_id=1660566504]
 stream = ExtResource("3_2rhyb")
-volume_db = -5.421
+volume_db = -7.0
 bus = &"SFX"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1901661132]
+stream = ExtResource("5_y43eh")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
