@@ -466,6 +466,7 @@ rotation = 2.8888013
 texture = ExtResource("15_xyj84")
 
 [node name="Lose" type="Control" parent="." unique_id=1446490153]
+visible = false
 z_index = 100
 layout_mode = 3
 anchors_preset = 0
