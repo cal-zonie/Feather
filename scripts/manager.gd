@@ -10,6 +10,23 @@ var quota = [5, 7, 10]
 var conveyor_speed = [25, 35, 40]
 var box_rate = [15,10,10]
 
+var wind = false
+var wind_speed = 70
+var wind_timer = 10
+var wind_max_timer = 10
+var wind_wait_timer = 15
+
+func _process(delta):
+	if in_level and current_level == 3:
+		wind_timer -= delta
+		if wind_timer < 0:
+			wind = !wind
+			wind_timer = wind_max_timer if wind else wind_wait_timer
+			wind_speed *= -1 if wind else 1
+			print(wind)
+			print(wind_timer)
+			print(wind_speed)
+
 func get_conveyor_speed():
 	return conveyor_speed[current_level - 1]
 
