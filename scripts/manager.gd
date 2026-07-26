@@ -35,6 +35,8 @@ func start_level(level: int):
 	if not seen_tutorial:
 		show_tutorial()
 	
+	Fade.get_node("AnimationPlayer").play("fade_out")
+	await Fade.get_node("AnimationPlayer").animation_finished
 	get_tree().change_scene_to_file("res://scenes/Level.tscn")
 	in_level = true
 
@@ -46,9 +48,17 @@ func end_level(lives_left: int):
 		level_progress[current_level - 1] = lives_left
 	in_level = false
 	current_level = 0
+	Fade.get_node("AnimationPlayer").play("fade_out")
+	await Fade.get_node("AnimationPlayer").animation_finished
 	get_tree().change_scene_to_file("res://scenes/menus/LevelSelect.tscn")
+	Fade.get_node("AnimationPlayer").play("fade_in")
+	await Fade.get_node("AnimationPlayer").animation_finished
 
 func quit_level():
 	in_level = false
 	current_level = 0
+	Fade.get_node("AnimationPlayer").play("fade_out")
+	await Fade.get_node("AnimationPlayer").animation_finished
 	get_tree().change_scene_to_file("res://scenes/menus/LevelSelect.tscn")
+	Fade.get_node("AnimationPlayer").play("fade_in")
+	await Fade.get_node("AnimationPlayer").animation_finished

@@ -15,6 +15,9 @@ func _ready():
 	conveyor_speed = Manager.conveyor_speed[Manager.current_level - 1]
 	update_quota()
 	update_lives()
+	
+	Fade.get_node("AnimationPlayer").play("fade_in")
+	await Fade.get_node("AnimationPlayer").animation_finished
 	$Alarm.play()
 	request_ready()
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -30,8 +33,11 @@ func submit_box(feathers: int, required: int):
 		update_quota()
 		if boxes_complete == quota:
 			get_tree().paused = true
+			Fade.get_node("AnimationPlayer").play("fade_out")
+			await Fade.get_node("AnimationPlayer").animation_finished
 			$Win.visible = true
-			#todo add fade
+			Fade.get_node("AnimationPlayer").play("fade_in")
+			await Fade.get_node("AnimationPlayer").animation_finished
 			$Winner.play()
 			pass
 	else:
@@ -47,8 +53,11 @@ func submit_box(feathers: int, required: int):
 		await get_tree().create_timer(2.0).timeout
 		if lives_remaining == 0:
 			get_tree().paused = true
+			Fade.get_node("AnimationPlayer").play("fade_out")
+			await Fade.get_node("AnimationPlayer").animation_finished
 			$Lose.visible = true
-			#todo add fade
+			Fade.get_node("AnimationPlayer").play("fade_in")
+			await Fade.get_node("AnimationPlayer").animation_finished
 			$Loser.play()
 
 func update_lives():
