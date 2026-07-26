@@ -18,7 +18,7 @@ func _ready():
 		
 func submit_box(feathers: int, required: int):
 	if feathers == required:
-		#play something??
+		$Correct.play()
 		boxes_complete += 1
 		update_quota()
 		if boxes_complete == quota:

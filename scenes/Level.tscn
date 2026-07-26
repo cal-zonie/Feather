@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dn53jsjt0e5d3" path="res://assets/sfx/Alarm.mp3" id="7_4qegb"]
 [ext_resource type="AudioStream" uid="uid://d144id08gx0mk" path="res://assets/sfx/Too Much Down.mp3" id="7_faw0r"]
 [ext_resource type="AudioStream" uid="uid://ck4cmuy7jx26w" path="res://assets/sfx/Not Enough Down.mp3" id="8_2eouu"]
+[ext_resource type="AudioStream" uid="uid://bu2spoa4uyq76" path="res://assets/sfx/Correct.mp3" id="9_2eouu"]
 
 [node name="Level" type="Node2D" unique_id=981665366]
 script = ExtResource("1_qifjx")
@@ -179,5 +180,6 @@ stream = ExtResource("7_faw0r")
 stream = ExtResource("8_2eouu")
 
 [node name="Correct" type="AudioStreamPlayer2D" parent="." unique_id=1956353970]
+stream = ExtResource("9_2eouu")
 
 [connection signal="on_submit_box" from="Conveyer" to="." method="submit_box"]
