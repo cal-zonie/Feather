@@ -8,6 +8,10 @@ signal finish
 func _ready():
 	required_feathers = randi_range(5, 10)
 	$Label.text = str(required_feathers)
+	
+	#random box sprite
+	var sprite_index = randi_range(0, 3)
+	get_child(sprite_index).visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
