@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ctf64r3yoo0kn" path="res://scripts/level_select.gd" id="1_ysbwo"]
 [ext_resource type="PackedScene" uid="uid://cu626dkytv0fu" path="res://scenes/menus/ui_elements/Level.tscn" id="2_1ltdo"]
-[ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="3_1ltdo"]
 
 [node name="LevelSelect" type="Control" unique_id=424081866]
 layout_mode = 3
@@ -87,8 +86,6 @@ theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 50
 text = "How to Play"
 flat = true
-
-[node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("3_1ltdo")]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]

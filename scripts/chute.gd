@@ -31,9 +31,13 @@ func _on_input_event(viewport, event, shape_idx):
 
 func toggle_lever():
 	if lever_state == false:
+		$LeverSound.play()
 		lever_state = true
 		$Lever/Color.color = Color.RED
+		$ChuteSound.play()
 	elif lever_state == true:
+		$LeverSound.play()
 		lever_state = false
 		$Lever/Color.color = Color.DARK_RED
+		$ChuteSound.stop()
 	
