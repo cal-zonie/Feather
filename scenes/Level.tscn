@@ -21,13 +21,16 @@
 script = ExtResource("1_qifjx")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1143402216]
+z_index = -5
 texture = ExtResource("2_2eouu")
 centered = false
 
 [node name="Conveyor" parent="." unique_id=100981104 instance=ExtResource("3_4qegb")]
+z_index = -1
 position = Vector2(-4, 613)
 
 [node name="Chute" parent="." unique_id=1154756705 instance=ExtResource("4_4qegb")]
+z_index = -1
 position = Vector2(492, -4)
 feather_rate = 0.1
 
