@@ -7,14 +7,17 @@ var in_level: bool = false
 var seen_tutorial: bool = false
 
 var quota = [5, 7, 10, 15]
-var conveyor_speed = [0.25, 0.5, 0.75, 1]
+var conveyor_speed = [30, 35, 40, 50]
 
 func _ready():
 	pass
 
 func _process(_delta):
 	pass
-	
+
+func get_conveyor_speed():
+	return conveyor_speed[current_level - 1]
+
 func start_level(level: int):
 	current_level = level
 	if not seen_tutorial:

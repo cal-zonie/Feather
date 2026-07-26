@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3u0n2n32u8gu"
-path="res://.godot/imported/conveyer.png-1dba339712da84aec1fb0912253f33c0.ctex"
+path="res://.godot/imported/conveyor.png-fdda00210e6ee1807f852cfe2819208f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/conveyer.png"
-dest_files=["res://.godot/imported/conveyer.png-1dba339712da84aec1fb0912253f33c0.ctex"]
+source_file="res://assets/conveyor.png"
+dest_files=["res://.godot/imported/conveyor.png-fdda00210e6ee1807f852cfe2819208f.ctex"]
 
 [params]
 

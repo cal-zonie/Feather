@@ -1,18 +1,28 @@
 extends Node
 
 @export var template_box: PackedScene
+var speed: float
+var timer: float
+var box_spawn_timer: float
+var required_feathers
 
 signal on_submit_box(feather_count: int, required_feathers: int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	speed = Manager.get_conveyor_speed()
+	#box_spawn_timer = Manager.get something
+	box_spawn_timer = 300.0 / speed
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("debug"):
+	timer -= delta
+	if timer < 0:
+		timer = box_spawn_timer
 		add_box()
+
+	for box in $Boxes.get_children():
+		box.position.x += speed * delta
 
 func add_box():
 	var new_box = template_box.duplicate(true).instantiate()

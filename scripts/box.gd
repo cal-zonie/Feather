@@ -1,14 +1,16 @@
 class_name Box
 extends Node2D
 
-@export var speed: float = 0
 var required_feathers: int = 1
 
 signal finish
 
+func _ready():
+	required_feathers = randi_range(5, 10)
+	$Label.text = str("Feathers: ", required_feathers)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x += speed * delta
 	if position.x > 1350:
 		queue_free()
 		finish.emit($Feathers.get_children().size(), required_feathers)
