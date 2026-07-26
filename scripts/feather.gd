@@ -7,11 +7,11 @@ var mouse_inside := false
 var falling := true
 var on_box := false
 
-@export var fall_speed: float = 1
-@export var rotation_speed: float = 0.01
-@export var float_speed: float = 0.5
+@export var fall_speed: float = 120
+@export var rotation_speed: float = 1.44
+@export var float_speed: float = 72
 @export var rotation_limit: float = 0.5
-@export var smooth_constant: float = .25 #must be greater than 0
+@export var smooth_constant: float = 0.25 #must be greater than 0
 
 signal on_pickup(feather)
 
@@ -19,7 +19,7 @@ signal on_pickup(feather)
 func _ready():
 	#floor_y += base_floor_y + randf_range(-30, 30)
 	#Randomize the starting rotation/position of the feather
-	position += Vector2(randf_range(-40, 40), randf_range(-10, 10))
+	position += Vector2(randf_range(-50, 50), randf_range(-10, 10))
 	rotation = randf_range(-rotation_limit, rotation_limit)
 	if randf() > 0.5:
 		rotation_speed *= -1

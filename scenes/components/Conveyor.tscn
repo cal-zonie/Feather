@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3u0n2n32u8gu" path="res://assets/conveyor.png" id="1_xvu53"]
 [ext_resource type="PackedScene" uid="uid://wb3yf1ckvov8" path="res://scenes/components/Box.tscn" id="2_xw2iy"]
 
-[node name="Conveyer" type="Node2D" unique_id=100981104]
+[node name="Conveyor" type="Node2D" unique_id=100981104]
 rotation = 0.0052557224
 script = ExtResource("1_ebewc")
 template_box = ExtResource("2_xw2iy")
