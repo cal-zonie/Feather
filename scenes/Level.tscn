@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://vhobjqr5tmhh" path="res://assets/chicken.png" id="11_ax7ne"]
 [ext_resource type="AudioStream" uid="uid://bcq26kce3lb4u" path="res://assets/sfx/Winner Winner.mp3" id="11_m0xki"]
 [ext_resource type="AudioStream" uid="uid://bo45admni25ug" path="res://assets/sfx/You Lose.mp3" id="12_xe3hh"]
+[ext_resource type="Texture2D" uid="uid://dtr8xtxtgs3w1" path="res://assets/redbits_1.png" id="14_opqd1"]
+[ext_resource type="Texture2D" uid="uid://bjrr6s0casa5t" path="res://assets/redbits_4.png" id="15_xyj84"]
+[ext_resource type="Texture2D" uid="uid://bv43aax56c657" path="res://assets/redbits_6.png" id="16_gips2"]
 
 [node name="Level" type="Node2D" unique_id=981665366]
 script = ExtResource("1_qifjx")
@@ -381,35 +384,35 @@ theme_override_fonts/font = ExtResource("5_rccsh")
 theme_override_font_sizes/font_size = 100
 text = "WINNER WINNER"
 
-[node name="TextureRect" type="TextureRect" parent="Win" unique_id=408452981]
+[node name="Chicken1" type="TextureRect" parent="Win" unique_id=408452981]
 layout_mode = 0
-offset_left = 412.0
-offset_top = 157.0
-offset_right = 540.0
-offset_bottom = 285.0
+offset_left = 390.6682
+offset_top = 157.08531
+offset_right = 518.6682
+offset_bottom = 285.08533
 rotation = -0.12566371
 scale = Vector2(2, 2)
 texture = ExtResource("11_ax7ne")
 flip_v = true
 
-[node name="TextureRect2" type="TextureRect" parent="Win" unique_id=1992275381]
+[node name="Chicken2" type="TextureRect" parent="Win" unique_id=1992275381]
 layout_mode = 0
-offset_left = 602.0
-offset_top = 208.00002
-offset_right = 730.0
-offset_bottom = 336.0
+offset_left = 580.6682
+offset_top = 208.08533
+offset_right = 708.6682
+offset_bottom = 336.08533
 rotation = 0.12566371
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("11_ax7ne")
 flip_h = true
 flip_v = true
 
-[node name="TextureRect3" type="TextureRect" parent="Win" unique_id=1970397806]
+[node name="Chicken3" type="TextureRect" parent="Win" unique_id=1970397806]
 layout_mode = 0
-offset_left = 398.00003
-offset_top = 236.0
-offset_right = 526.0
-offset_bottom = 364.0
+offset_left = 376.66824
+offset_top = 236.08531
+offset_right = 504.66824
+offset_bottom = 364.08533
 rotation = 0.12566371
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("11_ax7ne")
@@ -428,8 +431,41 @@ theme_override_font_sizes/font_size = 50
 text = "Level Select"
 flat = true
 
+[node name="Red1" type="TextureRect" parent="Win" unique_id=1692940115]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 31.0
+offset_right = 295.0
+offset_bottom = 95.0
+rotation = 0.2761457
+texture = ExtResource("14_opqd1")
+
+[node name="Red2" type="TextureRect" parent="Win" unique_id=151783078]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 38.0
+offset_right = 914.0
+offset_bottom = 102.0
+texture = ExtResource("15_xyj84")
+
+[node name="Red3" type="TextureRect" parent="Win" unique_id=1883478078]
+layout_mode = 0
+offset_left = 845.0
+offset_top = 149.0
+offset_right = 909.0
+offset_bottom = 213.0
+texture = ExtResource("16_gips2")
+
+[node name="Red4" type="TextureRect" parent="Win" unique_id=494840595]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 206.0
+offset_right = 366.0
+offset_bottom = 270.0
+rotation = 2.8888013
+texture = ExtResource("15_xyj84")
+
 [node name="Lose" type="Control" parent="." unique_id=1446490153]
-visible = false
 z_index = 100
 layout_mode = 3
 anchors_preset = 0
