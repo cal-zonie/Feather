@@ -1,0 +1,7 @@
+extends Node
+
+func _ready():
+	request_ready()
+
+func _on_return_pressed():
+	get_tree().change_scene_to_file("res://scenes/menus/LevelSelect.tscn")
