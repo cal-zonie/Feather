@@ -1,21 +1,22 @@
 [gd_scene format=3 uid="uid://b3l4ce6omieam"]
 
-[ext_resource type="Texture2D" uid="uid://bawtqwr6viqum" path="res://assets/chute.png" id="1_bhwpd"]
+[ext_resource type="Texture2D" uid="uid://bmihubab3igm8" path="res://assets/chute.png" id="1_bhwpd"]
 [ext_resource type="Script" uid="uid://30e8a1fj5d8f" path="res://scripts/chute.gd" id="1_xi8x8"]
 [ext_resource type="PackedScene" uid="uid://drwa0ds6l0imt" path="res://scenes/FeatherManager.tscn" id="3_x2n3r"]
 [ext_resource type="AudioStream" uid="uid://bawevnini0a4f" path="res://assets/sfx/Chute.mp3" id="4_47sel"]
+[ext_resource type="Texture2D" uid="uid://bka5fva2b4nq5" path="res://assets/lever_up.png" id="4_atecl"]
 [ext_resource type="AudioStream" uid="uid://d0ww0p7fvf1mi" path="res://assets/sfx/Lever.mp3" id="5_3dl80"]
+[ext_resource type="Texture2D" uid="uid://dahiaqtps5chg" path="res://assets/lever_down.png" id="5_sckp8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0q5d"]
-size = Vector2(46, 46)
+size = Vector2(51, 59)
 
 [node name="Chute" type="Node2D" unique_id=1154756705 node_paths=PackedStringArray("feather_manager")]
 script = ExtResource("1_xi8x8")
 feather_manager = NodePath("FeatherManager")
 
-[node name="Chute" type="TextureRect" parent="." unique_id=2080283654]
-offset_right = 145.0
-offset_bottom = 155.0
+[node name="Chute" type="Sprite2D" parent="." unique_id=765107012]
+position = Vector2(78, 57)
 texture = ExtResource("1_bhwpd")
 
 [node name="FeatherManager" parent="." unique_id=615271918 instance=ExtResource("3_x2n3r")]
@@ -24,25 +25,17 @@ position = Vector2(69, 142)
 [node name="Lever" type="Area2D" parent="." unique_id=2132495587]
 position = Vector2(158, 62)
 
-[node name="Border" type="ColorRect" parent="Lever" unique_id=715313468]
-offset_left = -3.0
-offset_top = -5.0
-offset_right = 41.0
-offset_bottom = 39.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
+[node name="Off" type="Sprite2D" parent="Lever" unique_id=2113730931]
+position = Vector2(18, 17)
+texture = ExtResource("4_atecl")
 
-[node name="Color" type="ColorRect" parent="Lever" unique_id=1950037107]
-z_index = 1
-offset_left = -1.0
-offset_top = -3.0
-offset_right = 39.0
-offset_bottom = 37.0
-mouse_filter = 2
-color = Color(0.3254902, 0, 0.015686275, 1)
+[node name="On" type="Sprite2D" parent="Lever" unique_id=650168052]
+visible = false
+position = Vector2(18, 17)
+texture = ExtResource("5_sckp8")
 
 [node name="Shape" type="CollisionShape2D" parent="Lever" unique_id=613487638]
-position = Vector2(19, 17)
+position = Vector2(18.5, 18.5)
 shape = SubResource("RectangleShape2D_q0q5d")
 
 [node name="ChuteSound" type="AudioStreamPlayer2D" parent="." unique_id=1633572307]

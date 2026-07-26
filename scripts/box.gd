@@ -7,7 +7,7 @@ signal finish
 
 func _ready():
 	required_feathers = randi_range(5, 10)
-	$Label.text = str("Feathers: ", required_feathers)
+	$Label.text = str(required_feathers)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

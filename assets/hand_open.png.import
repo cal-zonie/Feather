@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmihubab3igm8"
-path="res://.godot/imported/chute.png-9d84029ff757643de49fe8b01152f04b.ctex"
+uid="uid://dq2m1ssw3n3ta"
+path="res://.godot/imported/hand_open.png-94bdc1b149a5afb7589342aef38e68fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/chute.png"
-dest_files=["res://.godot/imported/chute.png-9d84029ff757643de49fe8b01152f04b.ctex"]
+source_file="res://assets/hand_open.png"
+dest_files=["res://.godot/imported/hand_open.png-94bdc1b149a5afb7589342aef38e68fb.ctex"]
 
 [params]
 

@@ -49,15 +49,9 @@ func _process(delta):
 				float_speed *= -1
 
 func _on_mouse_entered():
-	#Highlight the feather
-	$Regular.visible = false
-	$Highlight.visible = true
 	mouse_inside = true;
 
 func _on_mouse_exited():
-	#Unhighlight the feather
-	$Regular.visible = true
-	$Highlight.visible = false
 	mouse_inside = false
 
 func _on_input_event(viewport, event, shape_idx):

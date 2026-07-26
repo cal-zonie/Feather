@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmihubab3igm8"
-path="res://.godot/imported/chute.png-9d84029ff757643de49fe8b01152f04b.ctex"
+uid="uid://da5tytpm7mucf"
+path="res://.godot/imported/box.png-52cc4e41fddadef836f9ad4dbe7936fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/chute.png"
-dest_files=["res://.godot/imported/chute.png-9d84029ff757643de49fe8b01152f04b.ctex"]
+source_file="res://assets/box.png"
+dest_files=["res://.godot/imported/box.png-52cc4e41fddadef836f9ad4dbe7936fa.ctex"]
 
 [params]
 
