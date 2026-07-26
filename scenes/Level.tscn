@@ -10,6 +10,9 @@
 [ext_resource type="AudioStream" uid="uid://d144id08gx0mk" path="res://assets/sfx/Too Much Down.mp3" id="7_faw0r"]
 [ext_resource type="AudioStream" uid="uid://ck4cmuy7jx26w" path="res://assets/sfx/Not Enough Down.mp3" id="8_2eouu"]
 [ext_resource type="AudioStream" uid="uid://bu2spoa4uyq76" path="res://assets/sfx/Correct.mp3" id="9_2eouu"]
+[ext_resource type="Texture2D" uid="uid://vhobjqr5tmhh" path="res://assets/chicken.png" id="11_ax7ne"]
+[ext_resource type="AudioStream" uid="uid://bcq26kce3lb4u" path="res://assets/sfx/Winner Winner.mp3" id="11_m0xki"]
+[ext_resource type="AudioStream" uid="uid://bo45admni25ug" path="res://assets/sfx/You Lose.mp3" id="12_xe3hh"]
 
 [node name="Level" type="Node2D" unique_id=981665366]
 script = ExtResource("1_qifjx")
@@ -209,6 +212,14 @@ stream = ExtResource("8_2eouu")
 [node name="Correct" type="AudioStreamPlayer2D" parent="." unique_id=1956353970]
 stream = ExtResource("9_2eouu")
 
+[node name="Winner" type="AudioStreamPlayer2D" parent="." unique_id=1533195598]
+stream = ExtResource("11_m0xki")
+bus = &"SFX"
+
+[node name="Loser" type="AudioStreamPlayer2D" parent="." unique_id=699061488]
+stream = ExtResource("12_xe3hh")
+bus = &"SFX"
+
 [node name="Pause" type="Control" parent="." unique_id=1757605450]
 visible = false
 layout_mode = 3
@@ -338,6 +349,144 @@ theme_override_font_sizes/font_size = 50
 text = "Return"
 flat = true
 
+[node name="Win" type="Control" parent="." unique_id=999737804]
+visible = false
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackgroundColor" type="ColorRect" parent="Win" unique_id=949444096]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.44902766, 0.60677665, 0.53538287, 1)
+
+[node name="WinnerWinner" type="Label" parent="Win" unique_id=1509526788]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 49.0
+offset_right = 864.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_rccsh")
+theme_override_font_sizes/font_size = 100
+text = "WINNER WINNER"
+
+[node name="TextureRect" type="TextureRect" parent="Win" unique_id=408452981]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 157.0
+offset_right = 540.0
+offset_bottom = 285.0
+rotation = -0.12566371
+scale = Vector2(2, 2)
+texture = ExtResource("11_ax7ne")
+flip_v = true
+
+[node name="TextureRect2" type="TextureRect" parent="Win" unique_id=1992275381]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 208.00002
+offset_right = 730.0
+offset_bottom = 336.0
+rotation = 0.12566371
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("11_ax7ne")
+flip_h = true
+flip_v = true
+
+[node name="TextureRect3" type="TextureRect" parent="Win" unique_id=1970397806]
+layout_mode = 0
+offset_left = 398.00003
+offset_top = 236.0
+offset_right = 526.0
+offset_bottom = 364.0
+rotation = 0.12566371
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("11_ax7ne")
+flip_h = true
+
+[node name="LevelSelect" type="Button" parent="Win" unique_id=1542261598]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 458.0
+offset_right = 721.0
+offset_bottom = 535.0
+theme_override_colors/font_color = Color(0.6627451, 0.6627451, 0.6627451, 1)
+theme_override_colors/font_outline_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Level Select"
+flat = true
+
+[node name="Lose" type="Control" parent="." unique_id=1446490153]
+visible = false
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackgroundColor" type="ColorRect" parent="Lose" unique_id=79331028]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.44902766, 0.60677665, 0.53538287, 1)
+
+[node name="YouLose" type="Label" parent="Lose" unique_id=1316384198]
+layout_mode = 0
+offset_left = 276.0
+offset_top = 49.0
+offset_right = 864.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0.09019608, 0.09019608, 0.09019608, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_rccsh")
+theme_override_font_sizes/font_size = 100
+text = "YOU LOSE"
+horizontal_alignment = 1
+
+[node name="LevelSelect" type="Button" parent="Lose" unique_id=256667896]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 458.0
+offset_right = 721.0
+offset_bottom = 535.0
+theme_override_colors/font_color = Color(0.6627451, 0.6627451, 0.6627451, 1)
+theme_override_colors/font_outline_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Level Select"
+flat = true
+
+[node name="XXX" type="Label" parent="Lose" unique_id=968175050]
+layout_mode = 0
+offset_left = 278.0
+offset_top = 108.0
+offset_right = 866.0
+offset_bottom = 517.0
+theme_override_colors/font_color = Color(0.87058824, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 300
+text = "XXX"
+horizontal_alignment = 1
+
 [connection signal="on_submit_box" from="Conveyor" to="." method="submit_box"]
 [connection signal="pressed" from="Pause/Margin/Stuff/PauseButtons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause/Margin/Stuff/PauseButtons/Options" to="." method="_on_options_pressed"]
@@ -345,3 +494,5 @@ flat = true
 [connection signal="value_changed" from="Pause/Margin/Stuff/OptionsButtons/SFXVolume/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="Pause/Margin/Stuff/OptionsButtons/MusicVolume/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="Pause/Margin/Stuff/OptionsButtons/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="Win/LevelSelect" to="." method="_on_end_pressed"]
+[connection signal="pressed" from="Lose/LevelSelect" to="." method="_on_end_pressed"]
