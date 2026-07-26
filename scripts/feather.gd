@@ -40,9 +40,9 @@ func _process(delta):
 			#Feather rotates and moves left/right as it falls
 			#Slows feather movement down as it reaches rotation limit (to a minimum of a smooth_constant mult)
 			var fall_modifier = (abs(rotation_limit) + smooth_constant) - abs(rotation)
-			position += Vector2.DOWN * (fall_modifier * fall_speed)
-			rotate(fall_modifier * rotation_speed)
-			position.x -= fall_modifier * float_speed
+			position += Vector2.DOWN * (fall_modifier * fall_speed) * delta
+			rotate(fall_modifier * rotation_speed * delta)
+			position.x -= fall_modifier * float_speed * delta
 			if rotation < rotation_limit and rotation_limit < 0 or rotation > rotation_limit and rotation_limit > 0:
 				rotation_speed *= -1
 				rotation_limit *= -1

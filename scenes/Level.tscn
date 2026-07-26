@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c3swprbb4y06c" path="res://assets/feather background.png" id="1_kl8ac"]
 [ext_resource type="Script" uid="uid://bkamr2kemnv5n" path="res://scripts/level.gd" id="1_qifjx"]
-[ext_resource type="PackedScene" uid="uid://bkm6qtfg7eril" path="res://scenes/components/Conveyer.tscn" id="3_4qegb"]
+[ext_resource type="PackedScene" uid="uid://bkm6qtfg7eril" path="res://scenes/components/Conveyor.tscn" id="3_4qegb"]
 [ext_resource type="PackedScene" uid="uid://c2pmqscftelrp" path="res://scenes/components/Hand.tscn" id="3_dke22"]
 [ext_resource type="PackedScene" uid="uid://b3l4ce6omieam" path="res://scenes/components/Chute.tscn" id="4_4qegb"]
 [ext_resource type="FontFile" uid="uid://bdbh845suu1e1" path="res://assets/fonts/DigitTech7-Regular.ttf" id="6_dke22"]

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://8f1l3aiva1ey" path="res://assets/box4.png" id="4_tls8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7y7k"]
-size = Vector2(77, 34)
+size = Vector2(77, 16)
 
 [node name="Box" type="Area2D" unique_id=261152349]
 script = ExtResource("1_ovm6q")
@@ -29,7 +29,7 @@ z_index = 2
 texture = ExtResource("4_tls8h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1044653004]
-position = Vector2(1.5, 62)
+position = Vector2(1.5, 71)
 shape = SubResource("RectangleShape2D_q7y7k")
 
 [node name="Feathers" type="Node2D" parent="." unique_id=1349041478]
