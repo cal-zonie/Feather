@@ -65,11 +65,12 @@ index = 2
 layout_mode = 2
 index = 3
 
-[node name="4" parent="MarginContainer/VBoxContainer/Levels" unique_id=491910956 instance=ExtResource("2_1ltdo")]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=296804805]
 layout_mode = 2
-index = 4
+theme_override_constants/separation = 309
+alignment = 1
 
-[node name="Return" type="Button" parent="MarginContainer/VBoxContainer" unique_id=697566490]
+[node name="Return" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=697566490]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
 theme_override_colors/font_outline_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
@@ -78,6 +79,16 @@ theme_override_font_sizes/font_size = 50
 text = "Return"
 flat = true
 
+[node name="Tutorial" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1597872694]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.66245234, 0.66245234, 0.6624523, 1)
+theme_override_colors/font_outline_color = Color(0.27387273, 0.27387273, 0.27387273, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "How to Play"
+flat = true
+
 [node name="Hand" parent="." unique_id=2005192961 instance=ExtResource("3_1ltdo")]
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]

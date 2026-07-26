@@ -15,11 +15,12 @@ func _ready():
 	request_ready()
 	
 func _process(_delta):
-	if Input.is_action_just_pressed("Correct Box"):
-		submit_box(5, 5)
-	
-	if Input.is_action_just_pressed("Fail Box"):
-		submit_box(5, 7)
+	pass
+	#if Input.is_action_just_pressed("Correct Box"):
+		#submit_box(5, 5)
+	#
+	#if Input.is_action_just_pressed("Fail Box"):
+		#submit_box(5, 7)
 		
 func submit_box(feathers: int, required: int):
 	if feathers == required:
