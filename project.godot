@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://bsnxoabjpefwh"
 
 Manager="*uid://bbj4djruiwtib"
 Hand="*uid://c2pmqscftelrp"
+Fade="*uid://v5psbx6vpn7f"
 
 [display]
 
